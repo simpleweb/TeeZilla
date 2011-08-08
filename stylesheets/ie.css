@@ -1,0 +1,97 @@
+#header_content {
+	_height:330px;
+}
+
+h1.box_title span {
+	_height:58px;
+}
+
+h2.box_title span {
+	_height:58px;
+}
+
+ul#main_nav li {
+	margin:0 10px 0 0;
+	padding:0;
+	list-style:none;
+	float:left;
+}
+
+ul#main_nav li a, ul#main_nav li a:visited {
+    border-top:1px solid #6A6A6A;
+	border-left:1px solid #6A6A6A;
+	border-bottom:2px solid #333;
+	border-right:2px solid #333;
+}
+
+ul#main_nav li a:active, ul#main_nav li.nav_on a,  ul#main_nav li.nav_on a:visited {
+	border-top:2px solid #333;
+	border-left:2px solid #333;
+	border-bottom:1px solid #6A6A6A;
+	border-right:1px solid #6A6A6A;
+}
+
+a.big_red_button, a.big_red_button:visited {
+	border-top:1px solid #D11C24;
+	border-left:1px solid #D11C24;
+	border-bottom:2px solid #333;
+	border-right:2px solid #333;
+}
+
+a.big_red_button:active, a.big_red_button:hover {
+	border-top:2px solid #333;
+	border-left:2px solid #333;
+	border-bottom:1px solid #D11C24;
+	border-right:1px solid #D11C24;
+}
+
+a.grey_button, a.grey_button:visited {
+	border-top:1px solid #6A6A6A;
+	border-left:1px solid #6A6A6A;
+	border-bottom:2px solid #333;
+	border-right:2px solid #333;
+}
+
+a.grey_button:active, a.grey_button:hover {
+	border-top:2px solid #333;
+	border-left:2px solid #333;
+	border-bottom:1px solid #6A6A6A;
+	border-right:1px solid #6A6A6A;
+}
+
+
+#top_share_icons_wrap a, #top_share_icons_wrap a:visited, #details_share_icons_wrap a, #details_share_icons_wrap a:visited {
+	border-top:1px solid #ccc;
+	border-left:1px solid #ccc;
+	border-bottom:2px solid #969696;
+	border-right:2px solid #969696;
+}
+
+#top_share_icons_wrap a:active, #top_share_icons_wrap a:hover, #details_share_icons_wrap a:active, #details_share_icons_wrap a:hover {
+	border-top:2px solid #969696;
+	border-left:2px solid #969696;
+	border-bottom:1px solid #ccc;
+	border-right:1px solid #ccc;
+}
+
+#comments_facebook_login_wrap a, #comments_facebook_login_wrap a:visited, .fancybox_facebook_login_wrap a, .fancybox_facebook_login_wrap a:visited {
+	border-top:1px solid #999;
+	border-left:1px solid #999;
+	border-bottom:2px solid #333;
+	border-right:2px solid #333;
+}
+
+#comments_facebook_login_wrap a:active, #comments_facebook_login_wrap a:hover, .fancybox_facebook_login_wrap a:active, .fancybox_facebook_login_wrap a:hover {
+	border-top:2px solid #333;
+	border-left:2px solid #333;
+	border-bottom:1px solid #999;
+	border-right:1px solid #999;
+}
+
+.form_right_col {
+	_height:340px;
+}
+
+.form_right_col ul li {
+	_height:33px;
+}
