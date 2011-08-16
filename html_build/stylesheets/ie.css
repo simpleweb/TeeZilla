@@ -17,7 +17,7 @@ ul#main_nav li {
 	float:left;
 }
 
-ul#main_nav li a, ul#main_nav li a:visited {
+ul#main_nav li a, ul#main_nav li a:visited, ul#main_nav li.red_nav a, ul#main_nav li.red_nav a:visited {
     border-top:1px solid #6A6A6A;
 	border-left:1px solid #6A6A6A;
 	border-bottom:2px solid #333;
@@ -87,6 +87,18 @@ a.grey_button:active, a.grey_button:hover {
 	border-bottom:1px solid #999;
 	border-right:1px solid #999;
 }
+
+
+.large_thumb a span.vote_now_prompt, .large_thumb a:visited span.vote_now_prompt {
+	*bottom:40px;
+	_bottom:30px;
+}
+
+.medium_thumb {
+	padding-bottom:1px;
+	min-height:137px;
+}
+
 
 .form_right_col {
 	_height:340px;

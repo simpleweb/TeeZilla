@@ -255,6 +255,7 @@ ul#main_nav li a, ul#main_nav li a:visited {
 ul#main_nav li a:hover {
 	background-color:#efefef;
 	text-decoration:none;
+	border-color:#333;
 }
 
 ul#main_nav li a:active, ul#main_nav li.nav_on a,  ul#main_nav li.nav_on a:visited {
@@ -284,7 +285,7 @@ ul#main_nav li.red_nav a, ul#main_nav li.red_nav a:visited {
 }
 
 ul#main_nav li.red_nav a:hover {
-	background:url('../images/red_button_bg.png') 0 40% no-repeat #C2272D;
+	background:url('../images/red_button_bg.png') 0 35% no-repeat #C2272D;
 }
 
 ul#main_nav li.red_nav a:active {
@@ -414,7 +415,7 @@ a.big_red_button:hover {
 	-webkit-box-shadow: -2px -2px 0 #333;
 	box-shadow: -2px -2px 0 #333;
 	text-decoration:none;
-	background:url('../images/red_button_bg.png') 0 40% no-repeat #C2272D;
+	background:url('../images/red_button_bg.png') 0 30% no-repeat #C2272D;
 }
 
 a.big_red_button:active {
@@ -422,10 +423,6 @@ a.big_red_button:active {
 }
 
 /* medium_thumb styling */
-
-.medium_thumb {
-	
-}
 
 .medium_thumb a img, .medium_thumb a:visited img {
 	border:2px solid #adadad;
@@ -914,6 +911,7 @@ a.facebook_blue, a.facebook_blue:visited {
 ul#comments_list {
 	margin:10px 0 0 0;
 	padding:0;
+	clear:both;
 }
 
 ul#comments_list li {
