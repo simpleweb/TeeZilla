@@ -196,23 +196,24 @@ a:hover {
 #header_content {
 	width:980px;
 	margin: 0 auto 0 auto;
-	min-height:330px;
+	min-height:340px;
 	position:relative;
 }
 
 a#main_logo, a#main_logo:visited {
-	display:block;
-	width:218px;
-	height:236px;
-	overflow:hidden;
-	text-indent:-9999px;
-	float:left;
-	margin-top:10px;
+    display: block;
+    float: left;
+    height: 228px;
+    margin-top: 22px;
+	margin-left:-3px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 196px;
 }
 
 #main_arrow {
 	position:absolute;
-	bottom:-98px;
+	bottom:-57px;
 	left:-55px;
 	background:url('../images/main_arrow.png') top left no-repeat;
 	width:68px;
@@ -220,7 +221,7 @@ a#main_logo, a#main_logo:visited {
 }
 
 ul#main_nav {
-	margin:235px 0 0 0;
+	margin:220px 0 0 0;
 	padding:0;
 	float:right;
 }
@@ -235,7 +236,7 @@ ul#main_nav li {
 ul#main_nav li a, ul#main_nav li a:visited {
     font-family: 'PacificoRegular', serif;
 	color:#333;
-	font-size:1.9em;
+	font-size:1.8em;
 	font-weight:normal;
 	background-color:#fff;
 	border:1px solid #666666;
@@ -245,7 +246,7 @@ ul#main_nav li a, ul#main_nav li a:visited {
 	-moz-box-shadow: 2px 2px 0 #666666;
 	-webkit-box-shadow: 2px 2px 0 #666666;
 	box-shadow: 2px 2px 0 #666666;
-	padding:5px 20px 10px 20px;
+	padding:6px 20px 3px 20px;
 	text-align:center;
 	display:block;
 	line-height:1em;
@@ -262,6 +263,37 @@ ul#main_nav li a:active, ul#main_nav li.nav_on a,  ul#main_nav li.nav_on a:visit
 	box-shadow: -2px -2px 0 #555;
 	background-color:#efefef;
 }
+
+ul#main_nav li a span, ul#main_nav li a:visited span {
+	font-size:0.45em;
+	font-family:Arial, sans-serif;
+	display:block;
+	margin:7px auto 0 auto;
+}
+
+ul#main_nav li.red_nav a, ul#main_nav li.red_nav a:visited {
+	color:#fff;
+	border:1px solid #D11C24;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-box-shadow: 2px 2px 0 #333;
+	-webkit-box-shadow: 2px 2px 0 #333;
+	box-shadow: 2px 2px 0 #333;
+	text-shadow: 1px -1px 0px #333;
+	background:url('../images/red_button_bg.png') 0 50% no-repeat #C2272D;
+}
+
+ul#main_nav li.red_nav a:hover {
+	background:url('../images/red_button_bg.png') 0 40% no-repeat #C2272D;
+}
+
+ul#main_nav li.red_nav a:active {
+	-moz-box-shadow: -2px -2px 0 #333;
+	-webkit-box-shadow: -2px -2px 0 #333;
+	box-shadow: -2px -2px 0 #333;
+	background:url('../images/red_button_bg.png') 0 60% no-repeat #C2272D;
+}
+
 
 #top_share_icons_wrap {
 	float:right;
@@ -459,6 +491,7 @@ a.big_red_button:active {
 	margin:10px 4px 0 4px;
 	padding:10px;
 	cursor:pointer;
+	width:188px;
 }
 
 .large_tee_hover {
@@ -614,6 +647,16 @@ h1.box_title span {
 	width:auto;
 	padding-right:15px;
 	background:url('../images/h1_bg_end.png') top right no-repeat;
+}
+
+span.homepage_title_pointer {
+	display:block;
+	position:absolute;
+	top:-10px;
+	right:-70px;
+	height:56px!important;
+	width:63px!important;
+	background:url('../images/title_pointer.png') top right no-repeat!important;
 }
 
 h2.box_title {
