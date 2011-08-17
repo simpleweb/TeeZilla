@@ -1,46 +1,231 @@
-<!doctype html>
-<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-language" content="en" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  <title></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+	<title>
+		{% if idea %}
+			{{idea.title}} &middot; {{rusic.title}}
+		{% else %}
+			{{rusic.title}}
+		{% endif %}
+	</title>
+  <meta name="description" content="" /> 
+  <meta name="author" content="" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  {{ # This will include all stylesheets in `assets/stylesheets` }}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+  {{ # This will include all stylesheets in `http://localhost:8080` }}
   {{include_stylesheets}}
-
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+	
+	<link href="{{asset_url}}/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="{{asset_url}}/javascripts/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+	<!--[if lte IE 8]><link href="{{asset_url}}/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js" type="text/javascript"></script>
+	<script src="{{asset_url}}/javascripts/fancybox/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></script>
+	
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js" type="text/javascript"></script>
+  
   {{ # This will include all javascripts in `assets/javascripts` }}
   {{include_javascripts}}
+	
+	<script src="{{asset_url}}/javascripts/application.js" type="text/javascript"></script>
 
 </head>
 
 <body>
 
-  <div id="container">
-    <header>
+	<div id="header_rail">
+    	<div id="header_content" class="clearfix">
+        	<a href="index.html" id="main_logo">
+        		Teezil.la Website
+        	</a>
 
-    </header>
-    <div id="main" role="main">
+			<ul id="main_nav">
+				<li><a href="/">Voting<span>Get Voting Now</span></a></li>
+				<li><a href="#">Shop<span>Buy Winning Tees</span></a></li>
+				<li class="last red_nav"><a href="#entry_form" class="simple_login">Submit Your Design<span>Upload your Tee design to Win</span></a></li>
+			</ul>
 
-      {{ # This will be replace with the template content }}
-      {{yield}}
 
-    </div>
-    <footer>
+			<div id="main_arrow"><!-- IE Fix --></div>
 
-    </footer>
-  </div> <!-- eo #container -->
+ 		</div><!-- #header_content end -->
+    </div><!-- #header_rail end -->
 
-  <script>
+    
+	<div id="main_rail">
+    	<div id="main_content" class="clearfix">
+			<div id="main_right_col">
+				
+	     		{{ # This will be replace with the template content }}
+		     	{{yield}}
+
+    		</div><!-- end #main_right_col -->
+			
+			<div id="main_left_col">
+        	
+				<div class="block_wrapper">
+					<h2>How to take part:</h2>
+					<ol>
+						<li>Click the button below</li>
+						<li>Login with your Facebook or Twitter account</li>
+						<li>Upload your design</li>
+						<li>Vote on other people's designs and share your own</li>
+					</ol>
+					
+				</div><!-- end .block_wrapper -->
+			
+				<div class="block_wrapper clearfix">
+					<h3>Most popular Tees</h3>
+					
+					{% for idea in rusic.most_liked_ideas limit:4 %}			              
+						<div class="small_thumb">
+							<a href="{{idea.permalink}}">
+								<img src="{{idea.images.first.square}}" alt="{{idea.title}} Tee" />
+								<span class="title_of_tee">{{idea.title | truncate: 20}}...</span>
+							</a>
+						</div><!-- end of .small_thumb -->
+		            {% endfor %}
+
+				</div><!-- end .block_wrapper -->
+
+
+				<div class="block_wrapper clearfix">
+					<h3>Latest Tees</h3>
+					{% for idea in rusic.recent_ideas limit:6 %}
+						<div class="small_thumb">
+							<a href="{{idea.permalink}}">
+								<img src="{{idea.images.first.square}}" alt="{{idea.title}} Tee" />
+								<span class="title_of_tee">{{idea.title | truncate: 20}}...</span>
+							</a>
+						</div><!-- end of .small_thumb -->
+					{% endfor %}
+				</div><!-- end .block_wrapper -->
+
+
+			
+				
+        	</div><!-- end #main_left_col -->
+			
+		</div><!-- #main_content end -->
+	</div><!-- #main_rail end -->
+
+	<div id="facebook_twitter_login_form" class="none">
+		<form id="login_form" method="post" action="#">
+			<p>
+				Please Login with Facebook or Twitter: 
+			</p>
+			<div class="fancybox_facebook_login_wrap clearfix">
+				<a href="#" class="facebook_blue">Login with Facebook</a>
+				<a href="#" class="twitter_blue">Login with Twitter</a>
+			</div><!-- end #fancybox_facebook_login_wrap -->
+		</form>
+		
+	</div><!-- end #facebook_twitter_login -->
+
+
+	
+	<div id="facebook_twitter_vote_form" class="none">
+		<form id="vote_form" method="post" action="#">
+			<p>
+				Login with Facebook or Twitter and Vote for the Tee: 
+			</p>
+			<h3>Big Monkey Head</h3>
+			
+			<div class="fancybox_facebook_login_wrap clearfix">
+				<a href="/users/auth/facebook" class="facebook_blue">Login with Facebook</a>
+				<a href="/users/auth/twitter" class="twitter_blue">Login with Twitter</a>
+			</div><!-- end #fancybox_facebook_login_wrap -->
+		</form>
+		
+	</div><!-- end #facebook_twitter_vote_form -->
+	
+
+
+	<div id="facebook_twitter_entry_form" class="none">
+		<form id="entry_form" method="post" action="#" class="clearfix">
+			<div class="form_left_col">
+				
+				<p class="error ">Oops! Please correct the fields below</p>
+				<div class="clearfix">
+					<label for="email">Email: </label>
+					<input type="text" id="email" name="email" />
+				</div>
+				<div class="clearfix">
+					<label for="name">Name: </label>
+					<input type="text" id="name" name="name" />
+				</div>
+				<div class="clearfix">
+					<label for="tee_title">Tee Title: </label>
+					<input type="text" id="tee_title" name="tee_title" />
+				</div>
+				<div class="clearfix">
+					<label for="short_tee_description">Short Tee Description: </label>
+					<textarea id="short_tee_description" name="short_tee_description"></textarea>
+				</div>
+				
+				<div class="clearfix">
+					<label for="upload_design">Upload design: </label>
+					<input type="file" id="upload_design" name="upload_design" />
+				</div>
+				
+				<div class="clearfix">
+					<label for="i_agree" class="checkbox">Receive email updates </label>
+					<input type="checkbox" id="i_agree" name="i_agree" class="checkbox" />
+				</div>
+				
+				
+				
+				<div class="clearfix">
+					<input type="hidden" value="Submit" />
+				</div>
+				<div class="fancybox_facebook_login_wrap clearfix">
+					<p class="submit_p">
+						Submit form using your Facebook or Twitter account
+					</p>
+					<a href="#" class="facebook_blue">Submit with Facebook</a>
+					<a href="#" class="twitter_blue">Submit with Twitter</a>
+				</div><!-- end #fancybox_facebook_login_wrap -->
+				
+				
+			</div><!-- end .form_left_col -->
+			
+			<div class="form_right_col">
+				<h4>Checklist</h4>
+				<ul>
+					<li>I'm over 18 and am great</li>
+					<li>This tshirt is my own idea and doesn't come from another creative persons' idea</li>
+					<li>I agree to this site's Terms and Conditions</li>
+					<li>I’d like to hear from TeeZil.la if my design wins</li>
+					
+				</ul>
+			</div><!-- end #form_right_col -->
+			
+		</form>
+
+	</div><!-- end #facebook_twitter_vote_form -->
+    
+	<div id="footer_rail">
+    	<div id="footer_content" class="clearfix">
+        	
+			<div id="top_share_icons_wrap">
+				<a href="#" class="facebook_grey">Share on Facebook</a>
+				<a href="#" class="twitter_grey">Share on Twitter</a>
+			</div>
+			
+			<p><a href="#">Teezilla</a> is built and maintained with by <a href="http://www.simpleweb.co.uk" target="_blank">Simpleweb</a>, the realtime digital agency &copy;2011  </p>
+
+			
+        </div><!-- #footer_content end -->
+    </div><!-- #footer_rail end -->
+
+
+
+  <script type="text/javascript">
     var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]]; // Change UA-XXXXX-X to be your site's ID 
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
     g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";

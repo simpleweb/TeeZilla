@@ -1,3 +1,38 @@
+<div class="block_wrapper clearfix with_expander_button">
+	
+	<h1 class="box_title"><span>Teezilla Tees are only made by your votes.</span><span class="homepage_title_pointer"><!-- IE Fix --></span></h1>
+	<br class="clrb" />
+	
+	{% for idea in rusic.ideas %}
+	
+		{% if rusic.ideas != empty %}
+		<div class="large_thumb" id="idea-{{idea.id}}">
+			<a href="{{idea.permalink}}">
+				<span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
+				<span class="vote_now_prompt">Vote for design &gt;</span>
+				<img src="images/large_thumb_3.jpg" alt="Big Monkey Head Tee" />
+				<span class="title_of_tee">
+					{{idea.title}}
+				</span>
+			</a>
+			<p>
+				<span class="name_of_designer">John C.</span>
+			</p>
+
+		</div><!-- end .large_thumb -->
+		
+		{% else %}
+	      <p>
+			Sorry there are no Tee Designs to view yet. <a href="#entry_form" class="simple_login">Start us off by uploading your own Tee Design now!</a>
+	      </p>
+	    {% endif %}
+		
+	{% endfor %}
+	
+</div><!-- end .block_wrapper -->
+
+
+<!--
 <ol id="ideas">
   {% for idea in rusic.ideas %}
     <li class="idea" id="idea-{{idea.id}}">
@@ -15,3 +50,4 @@
     </li>
   {% endfor %}
 </ol>
+-->

@@ -1,0 +1,112 @@
+<div class="block_wrapper">
+	
+	<h1 class="box_title"><span>{{idea.title | truncate: 30}}</span></h1>
+		
+	{% if current_user and rusic.owner.uuid == current_user.uuid %}
+      [<a href="{{idea.permalink}}/edit">edit</a>]
+    {% endif %}
+		
+		<div id="details_wrap">
+			<div id="large_tee_col">
+				<span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
+				<img src="/images/large_tee_3.jpg" alt="Big Monkey Head Tee" />
+			
+			</div><!-- end #large_tee_col -->
+			
+			<div id="main_details_col">
+				
+				<a href="{% if current_user %}{{idea.like_link}}{% else %}#vote_form{% endif %}" class="big_red_button simple_login">
+					Vote Now!
+				</a>
+				<div id="details_share_icons_wrap">
+	       			<a href="#login_form" class="facebook_grey simple_login">Facebook it</a>
+					<a href="#login_form" class="twitter_grey simple_login">Tweet</a>
+	       		</div>
+				<p>
+					<span class="designer_name_title">Designer:</span>
+					<img src="/images/user_profile_image.jpg" alt="Name of User" />
+					<span class="designer_name">Name of User</span>
+				</p>
+				
+				<p>
+					<span class="days_to_vote_title">Days left to vote:</span>
+					<span class="days_to_vote">0</span><span class="days_to_vote">0</span><span class="days_to_vote">1</span>
+				</p>
+				
+				<p>
+					<span class="if_design_wins_title">If this design wins:</span>
+					<a href="#" class="if_design_wins grey_button">Notify me</a>
+				</p>
+			</div><!-- end #main_details_col -->
+			
+			<div id="title_and_description">
+				<p>
+					<span class="tee_title_title">Tee Title:</span>
+					<span class="tee_title">Big Monkey Head</span>
+				</p>
+			
+				<p>
+					<span class="description_title">Description:</span>
+					<span class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+				</p>	
+				
+			</div><!-- end #title_description -->
+			
+		</div><!-- end #details_wrap -->
+	
+	<br class="clrb" />
+
+
+</div><!-- end .block_wrapper -->
+
+
+<div class="block_wrapper with_expander_button">
+	
+	<h2 class="box_title"><span>Comments</span></h2>
+	<div id="comments_facebook_login_wrap">
+		<p>
+			<a href="#login_form" class="twitter_blue simple_login no-text"><span class="text-hidden">Comment with Twitter Login</span></a>
+			<a href="#login_form" class="facebook_blue simple_login no-text"><span class="text-hidden">Comment with Facebook Login</span></a>
+			Login to Facebook or Twitter to leave a comment
+		</p>
+		
+
+	</div><!-- end #comments_facebook_login_wrap -->
+	
+	<ul id="comments_list" class="clearfix">
+		<li>
+			<img src="/images/user_profile_image.jpg" alt="Name of User" />
+			<p>
+				<span class="comment_date">July 20, 2011 at 06:56 </span>
+				<span class="comment_author">Julie Prior wrote...</span>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</p>
+		</li>
+		
+		<li>
+			<img src="/images/user_profile_image.jpg" alt="Name of User" />
+			<p>
+				<span class="comment_date">July 20, 2011 at 06:56 </span>
+				<span class="comment_author">Julie Prior wrote...</span>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+			</p>
+		</li>
+		
+		<li>
+			<img src="/images/user_profile_image.jpg" alt="Name of User" />
+			<p>
+				<span class="comment_date">July 20, 2011 at 06:56 </span>
+				<span class="comment_author">Julie Prior wrote...</span>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+			</p>
+		</li>
+	
+	</ul><!-- end .comment_wrap -->
+
+	<div id="see_more_comments_button_wrap">
+		<a href="#" class="grey_button">
+			See more Comments
+		</a>
+	</div>
+
+</div><!-- end .block_wrapper -->
