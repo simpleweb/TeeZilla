@@ -1,6 +1,28 @@
 bucket:
-  title: Testing
+  title: TeeZilla
+  slug: teezilla
+  summary: "Design tees, win cash!"
+  interactive: true
+  permalink: http://localhost:8080/teezilla
   ideas:
-    - id: 1
-      title: One
-      content: Idea One
+    - uuid: da39a3
+      id: da39a3
+      title: Big Monkey Head
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      likes: 25
+      images:
+        - uuid: bfd2c4
+          id: bfd2c4
+          thumb: http://localhost:8080/assets/bfd2c4/thumb.jpg
+          square: http://localhost:8080/assets/bfd2c4/square.jpg
+          medium_large: http://localhost:8080/assets/bfd2c4/medium_large.jpg
+      comments:
+        - uuid: 99baee
+          id: 99baee
+          body: "This a mighty interesting comment!"
+          user:
+            uuid: e2f4c2
+            nickname: paulspringett
+            image_url: http://a2.twimg.com/profile_images/1347659029/photo.jpeg
+            profile_url: http://twitter.com/paulspringett
+            provider: twitter
