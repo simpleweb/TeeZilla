@@ -1,3 +1,4 @@
+{% assign idea = idea.first %}
 <div class="block_wrapper">
 	
 	<h1 class="box_title"><span>{{idea.title | truncate: 30}}</span></h1>
@@ -9,7 +10,7 @@
 		<div id="details_wrap">
 			<div id="large_tee_col">
 				<span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
-				<img src="/images/large_tee_3.jpg" alt="Big Monkey Head Tee" />
+				<img src="{{idea.images.first.medium_large}}" alt="Big Monkey Head Tee" />
 			
 			</div><!-- end #large_tee_col -->
 			
@@ -74,6 +75,16 @@
 	</div><!-- end #comments_facebook_login_wrap -->
 	
 	<ul id="comments_list" class="clearfix">
+	  {% for comment in idea.comments %}
+	    <li>
+  			<img src="{{comment.user.image_url}}" alt="{{comment.user.nickname}}" />
+  			<p>
+  				<span class="comment_date">July 20, 2011 at 06:56 </span>
+  				<span class="comment_author">Julie Prior wrote...</span>
+  				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  			</p>
+  		</li>
+	  {% endfor %}
 		<li>
 			<img src="/images/user_profile_image.jpg" alt="Name of User" />
 			<p>
