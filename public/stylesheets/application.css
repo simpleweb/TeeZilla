@@ -430,6 +430,8 @@ a.big_red_button:active {
 	border:2px solid #adadad;
 	float:left;
 	margin:0 10px 10px 0;
+	width:118px;
+	height:118px;
 }
 
 .medium_thumb a:hover img {
@@ -477,6 +479,8 @@ a.big_red_button:active {
 .small_thumb a img, .small_thumb a:visited img {
 	border:2px solid #adadad;
 	margin:0 0 3px 0;
+	width:78px;
+	height:78px;
 }
 
 .small_thumb a:hover img {
@@ -553,6 +557,8 @@ a.big_red_button:active {
 
 .large_thumb a img, .large_thumb a:visited img {
 	border:2px solid #adadad;
+	width:184px;
+	height:184px;
 }
 
 .large_thumb a:hover img, .large_tee_hover a img, .large_tee_hover a:visited img {
@@ -713,6 +719,8 @@ h2.box_title span {
 
 #large_tee_col img {
 	border:2px solid #333;
+	width:412px;
+	height:412px;
 }
 
 #main_details_col {
@@ -788,6 +796,8 @@ h2.box_title span {
 
 #details_wrap p img {
 	border:1px solid #333;
+	width:50px;
+	height:50px;
 }
 
 #details_wrap p span, #details_wrap p {
@@ -938,6 +948,8 @@ ul#comments_list li img {
 	float:left;
 	display:block;
 	margin:0 10px 0 0;
+	width:50px;
+	height:50px;
 }
 
 ul#comments_list li p {
