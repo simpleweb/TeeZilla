@@ -10,6 +10,12 @@ bucket:
       title: Big Monkey Head
       content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       likes: 25
+      user:
+        uuid: 3adea4
+        nickname: themosse
+        image_url: http://a1.twimg.com/profile_images/1128229843/png32_icon_reasonably_small.png
+        profile_url: http://twitter.com/themosse
+        provider: twitter
       images:
         - uuid: bfd2c4
           id: bfd2c4
@@ -25,4 +31,40 @@ bucket:
             nickname: paulspringett
             image_url: http://a2.twimg.com/profile_images/1347659029/photo.jpeg
             profile_url: http://twitter.com/paulspringett
+            provider: twitter
+        - uuid: 95d154
+          id: 95d154
+          body: "This is another mighty interesting comment!"
+          user:
+            uuid: 3adea4
+            nickname: themosse
+            image_url: http://a1.twimg.com/profile_images/1128229843/png32_icon_reasonably_small.png
+            profile_url: http://twitter.com/themosse
+            provider: twitter
+    - uuid: bfc896
+      id: 2
+      title: Kreepy Kat
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      likes: 9
+      user:
+        uuid: e2f4c2
+        nickname: paulspringett
+        image_url: http://a2.twimg.com/profile_images/1347659029/photo.jpeg
+        profile_url: http://twitter.com/paulspringett
+        provider: twitter
+      images:
+        - uuid: 08a489
+          id: 08a489
+          thumb: http://localhost:8080/assets/08a489/thumb.jpg
+          square: http://localhost:8080/assets/08a489/square.jpg
+          medium_large: http://localhost:8080/assets/08a489/medium_large.jpg
+      comments:
+        - uuid: 95d154
+          id: 95d154
+          body: "This is another mighty interesting comment!"
+          user:
+            uuid: 3adea4
+            nickname: themosse
+            image_url: http://a1.twimg.com/profile_images/1128229843/png32_icon_reasonably_small.png
+            profile_url: http://twitter.com/themosse
             provider: twitter
