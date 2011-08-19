@@ -1,4 +1,3 @@
-{% assign idea = idea.first %}
 <div class="block_wrapper">
 	
 	<h1 class="box_title"><span>{{idea.title | truncate: 30}}</span></h1>
@@ -10,7 +9,7 @@
 		<div id="details_wrap">
 			<div id="large_tee_col">
 				<span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
-				<img src="{{idea.images.first.medium_large}}" alt="Big Monkey Head Tee" />
+				<img src="{{idea.images.first.medium_large}}" alt="{{idea.title}}" />
 			
 			</div><!-- end #large_tee_col -->
 			
@@ -25,8 +24,8 @@
 	       		</div>
 				<p>
 					<span class="designer_name_title">Designer:</span>
-					<img src="/images/user_profile_image.jpg" alt="Name of User" />
-					<span class="designer_name">Name of User</span>
+					<img src="{{idea.user.image_url}}" alt="Name of User" />
+					<span class="designer_name">{{idea.user.nickname}}</span>
 				</p>
 				
 				<p>
@@ -43,12 +42,12 @@
 			<div id="title_and_description">
 				<p>
 					<span class="tee_title_title">Tee Title:</span>
-					<span class="tee_title">Big Monkey Head</span>
+					<span class="tee_title">{{idea.title}}</span>
 				</p>
 			
 				<p>
 					<span class="description_title">Description:</span>
-					<span class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+					<span class="description">{{idea.content}}</span>
 				</p>	
 				
 			</div><!-- end #title_description -->
@@ -79,39 +78,13 @@
 	    <li>
   			<img src="{{comment.user.image_url}}" alt="{{comment.user.nickname}}" />
   			<p>
-  				<span class="comment_date">July 20, 2011 at 06:56 </span>
-  				<span class="comment_author">Julie Prior wrote...</span>
-  				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  				<span class="comment_date">{{comment.created_at | date: '%b %d, %Y at %H:%i'}}</span>
+  				<span class="comment_author">{{comment.user.nickname}} wrote...</span>
+          {{comment.body | markdown}}
   			</p>
   		</li>
 	  {% endfor %}
-		<li>
-			<img src="/images/user_profile_image.jpg" alt="Name of User" />
-			<p>
-				<span class="comment_date">July 20, 2011 at 06:56 </span>
-				<span class="comment_author">Julie Prior wrote...</span>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</p>
-		</li>
-		
-		<li>
-			<img src="/images/user_profile_image.jpg" alt="Name of User" />
-			<p>
-				<span class="comment_date">July 20, 2011 at 06:56 </span>
-				<span class="comment_author">Julie Prior wrote...</span>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-			</p>
-		</li>
-		
-		<li>
-			<img src="/images/user_profile_image.jpg" alt="Name of User" />
-			<p>
-				<span class="comment_date">July 20, 2011 at 06:56 </span>
-				<span class="comment_author">Julie Prior wrote...</span>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-			</p>
-		</li>
-	
+
 	</ul><!-- end .comment_wrap -->
 
 	<div id="see_more_comments_button_wrap">

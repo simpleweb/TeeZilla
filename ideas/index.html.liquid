@@ -10,13 +10,13 @@
 			<a href="{{idea.permalink}}">
 				<span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
 				<span class="vote_now_prompt">Vote for design &gt;</span>
-				<img src="images/large_thumb_3.jpg" alt="Big Monkey Head Tee" />
+				<img src="{{idea.images.first.medium_large}}" alt="{{idea.title}}" />
 				<span class="title_of_tee">
 					{{idea.title}}
 				</span>
 			</a>
 			<p>
-				<span class="name_of_designer">John C.</span>
+				<span class="name_of_designer">{{idea.user.nickname}}</span>
 			</p>
 
 		</div><!-- end .large_thumb -->
