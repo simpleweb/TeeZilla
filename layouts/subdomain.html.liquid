@@ -78,14 +78,37 @@
 					</ol>
 					
 				</div><!-- end .block_wrapper -->
-			
+				
+				<div class="block_wrapper">
+					<h3>Last Week's Winner</h3>
+					
+					{% for idea in rusic.ideas limit:1 %}	
+						<div class="medium_thumb clearfix">
+							<a href="{{idea.permalink}}">
+								<img src="{{idea.images.first.square}}" alt="Kreepy Kat Tee" />
+							</a>
+							<p>
+								<a href="{{idea.permalink}}" class="title_of_tee">
+									{{idea.title | truncate: 25}}
+								</a>
+								<span class="name_of_designer">John C.</span>
+							</p>
+							<a href="#" class="grey_button">
+								Buy Tee
+							</a>
+						
+						</div><!-- end .medium_thumb -->
+					 {% endfor %}
+				</div><!-- end .block_wrapper -->
+				
+				
 				<div class="block_wrapper clearfix">
 					<h3>Most popular Tees</h3>
 					
 					{% for idea in rusic.ideas limit:6 %}			              
 						<div class="small_thumb">
 							<a href="{{idea.permalink}}">
-								<img src="{{idea.images.first.square}}" alt="{{idea.title}} Tee" />
+								<img src="{{idea.images.first.thumb}}" alt="{{idea.title}} Tee" />
 								<span class="title_of_tee">{{idea.title | truncate: 13}}</span>
 							</a>
 						</div><!-- end of .small_thumb -->
@@ -99,7 +122,7 @@
 					{% for idea in rusic.ideas limit:6 %}
 						<div class="small_thumb">
 							<a href="{{idea.permalink}}">
-								<img src="{{idea.images.first.square}}" alt="{{idea.title}} Tee" />
+								<img src="{{idea.images.first.thumb}}" alt="{{idea.title}} Tee" />
 								<span class="title_of_tee">{{idea.title | truncate: 13}}</span>
 							</a>
 						</div><!-- end of .small_thumb -->
