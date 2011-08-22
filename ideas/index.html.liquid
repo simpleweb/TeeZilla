@@ -3,7 +3,7 @@
 	<h1 class="box_title"><span>Teezilla Tees are only made by your votes.</span><span class="homepage_title_pointer"><!-- IE Fix --></span></h1>
 	<br class="clrb" />
 	
-	{% for idea in rusic.ideas %}
+	{% for idea in rusic.ideas limit:12  %}
 	
 		{% if rusic.ideas != empty %}
 		<div class="large_thumb" id="idea-{{idea.id}}">
@@ -12,7 +12,7 @@
 				<span class="vote_now_prompt">Vote for design &gt;</span>
 				<img src="{{idea.images.first.medium_large}}" alt="{{idea.title}}" />
 				<span class="title_of_tee">
-					{{idea.title}}
+					{{idea.title | truncate: 17}}
 				</span>
 			</a>
 			<p>
@@ -29,6 +29,12 @@
 		
 	{% endfor %}
 	
+	<div id="see_more_tees_button_wrap">
+		<a href="#" class="grey_button">
+			See more Tees
+		</a>
+	</div>
+		
 </div><!-- end .block_wrapper -->
 
 

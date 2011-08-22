@@ -82,11 +82,11 @@
 				<div class="block_wrapper clearfix">
 					<h3>Most popular Tees</h3>
 					
-					{% for idea in rusic.most_liked_ideas limit:4 %}			              
+					{% for idea in rusic.ideas limit:6 %}			              
 						<div class="small_thumb">
 							<a href="{{idea.permalink}}">
 								<img src="{{idea.images.first.square}}" alt="{{idea.title}} Tee" />
-								<span class="title_of_tee">{{idea.title | truncate: 20}}...</span>
+								<span class="title_of_tee">{{idea.title | truncate: 13}}</span>
 							</a>
 						</div><!-- end of .small_thumb -->
 		            {% endfor %}
@@ -96,11 +96,11 @@
 
 				<div class="block_wrapper clearfix">
 					<h3>Latest Tees</h3>
-					{% for idea in rusic.recent_ideas limit:6 %}
+					{% for idea in rusic.ideas limit:6 %}
 						<div class="small_thumb">
 							<a href="{{idea.permalink}}">
 								<img src="{{idea.images.first.square}}" alt="{{idea.title}} Tee" />
-								<span class="title_of_tee">{{idea.title | truncate: 20}}...</span>
+								<span class="title_of_tee">{{idea.title | truncate: 13}}</span>
 							</a>
 						</div><!-- end of .small_thumb -->
 					{% endfor %}
