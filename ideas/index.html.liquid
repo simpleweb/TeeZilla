@@ -3,7 +3,7 @@
 	<h1 class="box_title"><span>Teezilla Tees are only made by your votes.</span><span class="homepage_title_pointer"><!-- IE Fix --></span></h1>
 	<br class="clrb" />
 	
-	{% for idea in rusic.ideas limit:12  %}
+	{% for idea in rusic.ideas | limit:12 %}
 	
 		{% if rusic.ideas != empty %}
 		<div class="large_thumb" id="idea-{{idea.id}}">
