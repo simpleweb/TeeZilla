@@ -229,7 +229,40 @@
 		
 	</div><!-- end #facebook_twitter_login -->
 
+  <div id="winning_design_subscription" class="none">
+    <!-- Begin MailChimp Signup Form -->
+    <div id="mc_embed_signup">
+      <form action="{{notify_subscribe_url}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate target="_blank">
+      	<h2>Notify me if this design wins</h2>
+      	<p class="error none">Oops! Please correct the following fields:</p>
+        <div class="mc-field-group">
+        	<label for="mce-EMAIL">Email Address</label>
+        	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+        </div>
+        <div class="mc-field-group none">
+        	<label for="mce-NICKNAME">Name</label>
+        	<input type="text" value="{{current_user.nickname}}" name="NICKNAME" class="required" id="mce-NICKNAME">
+        </div>
+        <div class="mc-field-group size1of2 none">
+        	<label for="mce-IDEAID">TeeZilla Entry ID</label>
+        	<input type="number" name="IDEAID" class="required" value="{{idea.id}}" id="mce-IDEAID">
+        </div>
+        <div class="mc-field-group none">
+        	<label for="mce-PROVIDER">Provider</label>
+        	<input type="text" value="{{current_user.provider}}" name="PROVIDER" class="required" id="mce-PROVIDER">
+        </div>
+      	<div id="mce-responses" class="clear">
+      		<div class="response" id="mce-error-response" style="display:none"></div>
+      		<div class="response" id="mce-success-response" style="display:none"></div>
+      	</div>
+      	<div class="clear">
+      	  <input type="submit" value="Notify me" name="subscribe" id="mc-embedded-subscribe" class="button big_red_button">
+      	</div>
+      </form>
+    </div>
 
+    <!--End mc_embed_signup-->
+  </div>
 	
 	<div id="facebook_twitter_vote_form" class="none">
 		<form id="vote_form" method="post" action="#">

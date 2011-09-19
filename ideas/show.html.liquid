@@ -43,7 +43,11 @@
 				
 				<p>
 					<span class="if_design_wins_title">If this design wins:</span>
-					<a href="#" class="if_design_wins grey_button">Notify me</a>
+					{% if current_user %}
+					  <a href="#mc-embedded-subscribe-form" class="if_design_wins grey_button simple_login">Notify me</a>
+					{% else %}
+					  <a href="#login_form" class="if_design_wins grey_button simple_login">Notify me</a>
+					{% endif %}
 				</p>
 			</div><!-- end #main_details_col -->
 			

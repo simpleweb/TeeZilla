@@ -1372,8 +1372,8 @@ span.error {
   float: left;
 }
 
-form#entry_form input[type=submit].big_red_button,
-form#comments input[type=submit].big_red_button {
+form input[type=submit].big_red_button,
+form input[type=submit].big_red_button {
   margin-left: 118px;
 }
 form#comments {
@@ -1411,4 +1411,22 @@ form#comments div.social-post label.checkbox {
 
 div.idea-expired div#main_details_col {
   padding-top: 60px;
+}
+
+form#mc-embedded-subscribe-form div.mc-field-group,
+form#mc-embedded-subscribe-form input[type=submit] {
+  margin-bottom: 15px;
+  float: left;
+}
+form#mc-embedded-subscribe-form label {
+  line-height: 30px;
+}
+form#mc-embedded-subscribe-form input[type=submit].big_red_button {
+  font-size: 16px;
+  width: 116px;
+}
+form#mc-embedded-subscribe-form input[type=email].error {
+  display: inline !important;
+  width: 268px !important;
+  margin: 0;
 }

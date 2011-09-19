@@ -100,4 +100,60 @@ jQuery(document).ready(function() {
         }
     
   });
+  
+  
+  
+  
+  
+  
+  
+  $("form#mc-embedded-subscribe-form").validate({
+    errorPlacement: function(error, $element) {
+      var $wrapper = $element.parent('div.mc-field-group');
+      $wrapper.append(error);
+    },
+    errorElement: "span",
+    rules: {
+      "EMAIL": {
+        required: true,
+        email: true
+      }
+    },
+    messages: {
+      "EMAIL": {
+        required: "Your email address is required.",
+        email: "A valid email is required."
+      }
+    },
+    submitHandler: function(form) {
+      
+      $.fancybox.close;
+      
+      form.submit();
+
+    },
+    
+    invalidHandler: function(form, validator) {
+          var errors = validator.numberOfInvalids();
+          if (errors) {
+            var message = errors == 1
+              ? 'You missed 1 field. It has been highlighted'
+              : 'You missed ' + errors + ' fields. They have been highlighted';
+            $("p.error").html(message);
+            $("p.error").show();
+          } else {
+            $("p.error").hide();
+          }
+        }
+    
+  });
+  
+  
+  
+  
+  
+  
+  
+  
+  
 });
