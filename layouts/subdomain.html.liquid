@@ -80,7 +80,18 @@
 			<ul id="main_nav">
 				<li><a href="{{rusic.permalink}}">Voting<span>Get Voting Now</span></a></li>
 				<li><a href="#">Shop<span>Buy Winning Tees</span></a></li>
-				<li class="last red_nav"><a href="/ideas/new" class="simple_login">Submit Your Design<span>Upload your Tee design to Win</span></a></li>
+				<li class="last red_nav">
+				  {% if current_user %}
+				    <a href="/ideas/new" class="simple_login">
+				  {% else %}
+				    <a href="#login_form" class="simple_login">
+				  {% endif %}
+				    Submit Your Design
+				    <span>
+				      Upload your Tee design to Win
+				    </span>
+				  </a>
+				</li>
 			</ul>
 
 
