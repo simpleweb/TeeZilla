@@ -61,5 +61,50 @@ jQuery(document).ready(function() {
     return false;
   });
 
+
+  // The load more link
+  var $more = $('a.lnkViewMore');
+
+  // handle showing more entries, this needs to ajax in some of the
+  // entries on load.
+  function page(done) {
+    window.offset = (window.page*window.pagesize)-window.pagesize;
+
+    $("div#entries").find("div.large_thumb").slice(window.offset,window.offset+window.pagesize).show();
+
+    $.get('/', {page: ++window.page}, function(data) {
+      console.log("Data: ");
+      console.log(data);
+      $(".large_thumb", data).hide().appendTo("div#entries");
+      showHideMore($("div#entries"));
+      done && done();
+    });
+  }
+
+  function showHideMore(container) {
+    if($(container).find("div.large_thumb:hidden").length==0) {
+      $more.hide();
+    } else {
+      $more.show();
+    }
+  }
+
+  window.page = 1;
+  window.pagesize = 12;
+  page();
+
+  $more.click(function() {
+    var self = this;
+    var oldText = $(this).text();
+    $(this).text("Loading...");
+
+    page(function() {
+      $(self).text(oldText);
+    });
+
+    return false;
+  });
+
+
 });
 

@@ -3,57 +3,36 @@
 	<h1 class="box_title"><span>Teezilla Tees are only made by your votes.</span><span class="homepage_title_pointer"><!-- IE Fix --></span></h1>
 	<br class="clrb" />
 	
-	{% for idea in rusic.ideas | limit:12 %}
-	
-		{% if rusic.ideas != empty %}
-		<div class="large_thumb" id="idea-{{idea.id}}">
-			<a href="{{idea.permalink}}">
-				<span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
-				<span class="vote_now_prompt">Vote for design &gt;</span>
-				<img src="{{idea.images.first.medium_large}}" alt="{{idea.title}}" />
-				<span class="title_of_tee">
-					{{idea.title | truncate: 17}}
-				</span>
-			</a>
-			<p>
-				<span class="name_of_designer">{{idea.user.nickname}}</span>
-			</p>
-
-		</div><!-- end .large_thumb -->
-		
-		{% else %}
-	      <p>
+	{% if rusic.ideas != empty %}
+	  <div id="entries">
+	    {% paginate rusic.ideas by 12 %}
+  	    {% for idea in paginate %}
+    	    <div class="large_thumb" id="idea-{{idea.uuid}}">
+      			<a href="{{idea.permalink}}">
+      				<span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
+      				<span class="vote_now_prompt">Vote for design &gt;</span>
+      				<img src="{{idea.images.first.medium_large}}" alt="{{idea.title}}" />
+      				<span class="title_of_tee">
+      					{{ idea.title | truncate: 17 }}
+      				</span>
+      			</a>
+      			<p>
+      				<span class="name_of_designer">{{idea.user.nickname}}</span>
+      			</p>
+      		</div><!-- end .large_thumb -->
+    		{% endfor %}
+  		{% endpaginate %}
+	  </div>
+	{% else %}
+	  <p>
 			Sorry there are no Tee Designs to view yet. <a href="#entry_form" class="simple_login">Start us off by uploading your own Tee Design now!</a>
-	      </p>
-	    {% endif %}
-		
-	{% endfor %}
-	
+	  </p>
+	{% endif %}
+
 	<div id="see_more_tees_button_wrap">
-		<a href="#" class="grey_button">
+		<a href="#" class="lnkViewMore grey_button">
 			See more Tees
 		</a>
 	</div>
 		
 </div><!-- end .block_wrapper -->
-
-
-<!--
-<ol id="ideas">
-  {% for idea in rusic.ideas %}
-    <li class="idea" id="idea-{{idea.id}}">
-
-      <h2>{{idea.title}}</h2>
-
-      <div class="meta">
-        <span class="date created">{{idea.created_at}}</span>
-      </div>
-
-      <div class="content markdown">
-        {{markdown idea.content}}
-      </div>
-
-    </li>
-  {% endfor %}
-</ol>
--->
