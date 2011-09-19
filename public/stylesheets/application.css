@@ -1408,3 +1408,7 @@ form#comments div.social-post label.checkbox {
   margin-right: 0;
   width: 280px;
 }
+
+div.idea-expired div#main_details_col {
+  padding-top: 60px;
+}
