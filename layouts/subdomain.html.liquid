@@ -122,13 +122,30 @@
 				<div class="block_wrapper">
 					<h2>How to take part:</h2>
 					<ol>
-						<li>Click the button below</li>
 						<li>Login with your Facebook or Twitter account</li>
+						<li>Click &ldquo;Submit your design&rdquo;</li>
 						<li>Upload your design</li>
 						<li>Vote on other people's designs and share your own</li>
 					</ol>
 					
 				</div><!-- end .block_wrapper -->
+				
+				<div id="sidebar-sign-in" class="block_wrapper">
+				  {% if current_user %}
+				    <h2>Hey {{current_user.nickname}}!</h2>
+				    <p>
+				      You're signed in. <a href="/logout">Sign out</a>
+				    </p>
+				  {% else %}
+				    <h2>Sign in to vote &amp; submit your design.</h2>
+				    <p>
+  				    <a href="/users/auth/facebook" class="facebook_grey">Sign in with Facebook</a>
+				    </p>
+				    <p>
+				      <a href="/users/auth/twitter" class="twitter_grey">Sign in with Twitter</a>
+				    </p>
+				  {% endif %}
+				</div>
 				
 				<div class="block_wrapper">
 					<h3>Last Week's Winner</h3>

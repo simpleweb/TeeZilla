@@ -945,7 +945,9 @@ h2.box_title span {
   float: left;
 }
 
-#details_share_icons_wrap a, #details_share_icons_wrap a:visited {
+#details_share_icons_wrap a, #details_share_icons_wrap a:visited,
+div#sidebar-sign-in a.twitter_grey, div#sidebar-sign-in a.twitter_grey:visited,
+div#sidebar-sign-in a.facebook_grey, div#sidebar-sign-in a.facebook_grey:visited {
   float: left;
   color: #333;
   font-size: 1.3em;
@@ -963,7 +965,15 @@ h2.box_title span {
   display: block;
   line-height: 1em;
 }
-
+div#sidebar-sign-in a.twitter_grey,
+div#sidebar-sign-in a.facebook_grey {
+  float: none;
+  font-size: 16px;
+  width: 208px;
+}
+div#sidebar-sign-in a.twitter_grey {
+  margin-left: 0;
+}
 
 #details_share_icons_wrap a:active, #details_share_icons_wrap a:hover {
   -moz-box-shadow: -1px -1px 0 #969696;
