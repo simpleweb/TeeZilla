@@ -5,13 +5,13 @@
 	
 	{% if rusic.ideas != empty %}
 	  <div id="entries">
-	    {% paginate rusic.ideas by 12 %}
+	    {% paginate rusic.ideas by 9 %}
   	    {% for idea in paginate %}
     	    <div class="large_thumb" id="idea-{{idea.uuid}}">
       			<a href="{{idea.permalink}}">
       				<span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
       				<span class="vote_now_prompt">Vote for design &gt;</span>
-      				<img src="{{idea.images.first.medium_large}}" alt="{{idea.title}}" />
+      				<img src="{{idea.images.first.medium_square}}" alt="{{idea.title}}" />
       				<span class="title_of_tee">
       					{{ idea.title | truncate: 17 }}
       				</span>
