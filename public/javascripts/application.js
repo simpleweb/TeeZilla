@@ -88,7 +88,7 @@ jQuery(document).ready(function() {
   }
 
   window.page = 1;
-  window.pagesize = 12;
+  window.pagesize = 9;
   page();
 
   $more.click(function() {
@@ -105,20 +105,32 @@ jQuery(document).ready(function() {
 
   // notify me forms
   
-  $("form#mc-embedded-subscribe-form").validate({
+  var $flash = $('div.flash.success'),
+      $form = $('form#winning_design_subscription_form'),
+      has_email_address = $form.attr('data-user-has-email-address');
+  
+  console.log(has_email_address);
+  
+  if($.trim($flash.text()) === 'Thanks for voting for this Tee!' && has_email_address == "false") {
+    console.log("$form.fancybox()");
+    
+    $.fancybox($("div#winning_design_subscription").html());
+  }
+  
+  $("div#fancybox-content form#winning_design_subscription_form").validate({
     errorPlacement: function(error, $element) {
       var $wrapper = $element.parent('div.mc-field-group');
       $wrapper.append(error);
     },
     errorElement: "span",
     rules: {
-      "EMAIL": {
+      "user[email]": {
         required: true,
         email: true
       }
     },
     messages: {
-      "EMAIL": {
+      "user[email]": {
         required: "Your email address is required.",
         email: "A valid email is required."
       }
