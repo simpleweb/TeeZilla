@@ -36,7 +36,7 @@ jQuery(document).ready(function() {
       "idea[title]": {
         required: true,
         minlength: 2,
-        maxlength: 30
+        maxlength: 140
       },
       "idea[content]": {
         required: true
@@ -55,7 +55,7 @@ jQuery(document).ready(function() {
       "idea[title]": {
         required: "Tee title is required.",
         minlength: "At least 2 characters required.",
-        maxlength: "Maximum 30 characters please."
+        maxlength: "Maximum 140 characters please."
       },
       "idea[custom1]": {
         required: "Your email address is required.",
