@@ -1,5 +1,7 @@
 {% if env == 'production' %}
-  {% assign asset_url='http://s3.amazonaws.com/teezilla' %}
+  {% assign asset_url='http://teezilla.s3.amazonaws.com' %}
+{% elsif env == 'staging' %}
+  {% assign asset_url='http://teezilla.s3.amazonaws.com' %}
 {% else %}
   {% assign asset_url='http://localhost:8080' %}
 {% endif %}

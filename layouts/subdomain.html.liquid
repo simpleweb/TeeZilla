@@ -1,12 +1,9 @@
 {% if env == 'production' %}
-  {% assign asset_url='http://s3.amazonaws.com/teezilla' %}
-  {% assign notify_subscribe_url='#' %}
+  {% assign asset_url='http://teezilla.s3.amazonaws.com' %}
 {% elsif env == 'staging' %}
   {% assign asset_url='http://teezilla.s3.amazonaws.com' %}
-  {% assign notify_subscribe_url='http://simpleweb.us2.list-manage.com/subscribe/post?u=79956809b8ddcd1f6d535efdb&amp;id=ae3bae6d55' %}
 {% else %}
   {% assign asset_url='http://localhost:8080' %}
-  {% assign notify_subscribe_url='http://simpleweb.us2.list-manage.com/subscribe/post?u=79956809b8ddcd1f6d535efdb&amp;id=ae3bae6d55' %}
 {% endif %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
