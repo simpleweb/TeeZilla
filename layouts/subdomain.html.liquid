@@ -14,9 +14,9 @@
 
 	<title>
 		{% if idea %}
-			{{idea.title}} &middot; {{rusic.title}}
+			{{idea.title}} &middot; {{space.title}}
 		{% else %}
-			{{rusic.title}}
+			{{space.title}}
 		{% endif %}
 	</title>
   <meta name="description" content="" /> 
@@ -75,12 +75,12 @@
   
 	<div id="header_rail">
     	<div id="header_content" class="clearfix">
-        	<a href="{{rusic.permalink}}" id="main_logo">
+        	<a href="{{space.permalink}}" id="main_logo">
         		Teezil.la Website
         	</a>
 
 			<ul id="main_nav">
-				<li><a href="{{rusic.permalink}}">Voting<span>Get Voting Now</span></a></li>
+				<li><a href="{{space.permalink}}">Voting<span>Get Voting Now</span></a></li>
 				<li><a href="#">Shop<span>Buy Winning Tees</span></a></li>
 				<li class="last red_nav">
 				  {% if current_user %}
@@ -163,7 +163,7 @@
 				<div class="block_wrapper">
 					<h3>Last Week's Winner</h3>
 					
-					{% for idea in rusic.ideas | limit:1 %}	
+					{% for idea in space.ideas | limit:1 %}	
 						<div class="medium_thumb clearfix">
 							<a href="{{idea.permalink}}">
 								<img src="{{idea.images.first.square}}" alt="Kreepy Kat Tee" />
@@ -186,7 +186,7 @@
 				<div class="block_wrapper clearfix">
 					<h3>Most popular Tees</h3>
 					
-					{% for idea in rusic.most_liked_ideas limit:6 %}			              
+					{% for idea in space.most_liked_ideas limit:6 %}			              
 						<div class="small_thumb">
 							<a href="{{idea.permalink}}">
 								<img src="{{idea.images.first.square}}" alt="{{idea.title}} Tee" />
@@ -200,7 +200,7 @@
 
 				<div class="block_wrapper clearfix">
 					<h3>Latest Tees</h3>
-					{% for idea in rusic.ideas limit:6 %}
+					{% for idea in space.ideas limit:6 %}
 						<div class="small_thumb">
 							<a href="{{idea.permalink}}">
 								<img src="{{idea.images.first.square}}" alt="{{idea.title}} Tee" />

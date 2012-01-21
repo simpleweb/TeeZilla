@@ -1,64 +1,64 @@
 <div class="block_wrapper">
-	
-	<h1 class="box_title"><span>{{idea.title | truncate: 45}}</span></h1>
 
-		<div id="details_wrap">
-			<div id="large_tee_col">
-				<span class="vote_status_wrapper" title="Number of votes">{{ idea.likes }}</span>
-				<img src="{{idea.images.first.medium_large}}" alt="{{idea.title}}" />
-			
-			</div><!-- end #large_tee_col -->
-			
-			<div id="main_details_col">
-				
-				{% if current_user %}
-			    <a href="{{idea.like_link}}" data-method="post" class="big_red_button">
-  					Vote Now!
-  				</a>
-				{% else %}
-				  <a href="#vote_form" class="big_red_button simple_login">
-  					Vote Now!
-  				</a>
-				{% endif %}
-				
-				<div id="details_share_icons_wrap">
-	       	<p style="margin-bottom: 4px;">Share on:</p>
+  <h1 class="box_title"><span>{{idea.title | truncate: 45}}</span></h1>
+
+    <div id="details_wrap">
+      <div id="large_tee_col">
+        <span class="vote_status_wrapper" title="Number of votes">{{ idea.likes }}</span>
+        <img src="{{idea.images.first.medium_large}}" alt="{{idea.title}}" />
+
+      </div><!-- end #large_tee_col -->
+
+      <div id="main_details_col">
+
+        {% if current_user %}
+          <a href="{{idea.like_link}}" data-method="post" class="big_red_button">
+            Vote Now!
+          </a>
+        {% else %}
+          <a href="#vote_form" class="big_red_button simple_login">
+            Vote Now!
+          </a>
+        {% endif %}
+
+        <div id="details_share_icons_wrap">
+          <p style="margin-bottom: 4px;">Share on:</p>
           <a href="#share-on-facebook" class="lnkShareFacebook facebook_grey">Facebook</a>
-  				<a href="http://twitter.com/share?text=Vote for {{idea.title}} on TeeZilla!&amp;count=none&amp;via=TeeZilla&amp;related=rusicHQ" class="lnkShareTwitter twitter_grey">Twitter</a>
+          <a href="http://twitter.com/share?text=Vote for {{idea.title}} on TeeZilla!&amp;count=none&amp;via=TeeZilla&amp;related=rusicHQ" class="lnkShareTwitter twitter_grey">Twitter</a>
 
-					  
-	      </div>
-				<p>
-					<span class="designer_name_title">Designer:</span>
-					<img src="{{idea.user.image_url}}" alt="Name of User" />
-					<span class="designer_name">{{idea.user.nickname}}</span>
-				</p>
-				
-				<p class="days-remaining" data-days="{{ idea.expires_at_in_days }}">
-					<span class="days_to_vote_title">Days left to vote:</span>
-					<span class="days_to_vote hundreds">0</span>
-					<span class="days_to_vote tens">0</span>
-					<span class="days_to_vote units">0</span>
-				</p>
-				
-			</div><!-- end #main_details_col -->
-			
-			<div id="title_and_description">
-				<p>
-					<span class="tee_title_title">Tee Title:</span>
-					<span class="tee_title">{{idea.title}}</span>
-				</p>
-			
-				<p>
-					<span class="description_title">Description:</span>
-					<span class="description">{{idea.content}}</span>
-				</p>	
-				
-			</div><!-- end #title_description -->
-			
-		</div><!-- end #details_wrap -->
-	
-	<br class="clrb" />
+
+        </div>
+        <p>
+          <span class="designer_name_title">Designer:</span>
+          <img src="{{idea.user.image_url}}" alt="Name of User" />
+          <span class="designer_name">{{idea.user.nickname}}</span>
+        </p>
+
+        <p class="days-remaining" data-days="{{ idea.expires_at_in_days }}">
+          <span class="days_to_vote_title">Days left to vote:</span>
+          <span class="days_to_vote hundreds">0</span>
+          <span class="days_to_vote tens">0</span>
+          <span class="days_to_vote units">0</span>
+        </p>
+
+      </div><!-- end #main_details_col -->
+
+      <div id="title_and_description">
+        <p>
+          <span class="tee_title_title">Tee Title:</span>
+          <span class="tee_title">{{idea.title}}</span>
+        </p>
+
+        <p>
+          <span class="description_title">Description:</span>
+          <span class="description">{{idea.content}}</span>
+        </p>
+
+      </div><!-- end #title_description -->
+
+    </div><!-- end #details_wrap -->
+
+  <br class="clrb" />
 
 
 </div><!-- end .block_wrapper -->
@@ -66,8 +66,8 @@
 
 {% if current_user %}
 <div class="block_wrapper">
-	
-	<h2 class="box_title"><span>Post your comment</span></h2>
+
+  <h2 class="box_title"><span>Post your comment</span></h2>
   <form action="{{idea.permalink}}/comments" id="comments" method="post" class="clearfix">
     <div class="input clearfix">
       <label for="comment_body">Comment</label>
@@ -78,43 +78,43 @@
     </div>
     <div class="input social-post clearfix">
       <label class="checkbox" for="comment_should_post_to_social">Share this comment on {{current_user.provider}}?</label>
-      <input class="checkbox" type="checkbox" id="comment_should_post_to_social" name="comment[should_post_to_social]" value="1" checked="checked" /> 
+      <input class="checkbox" type="checkbox" id="comment_should_post_to_social" name="comment[should_post_to_social]" value="1" checked="checked" />
     </div>
   </form>
 </div>
 {% endif %}
 
 <div class="block_wrapper">
-	
-	<h2 class="box_title"><span>Comments</span></h2>
-	{% unless current_user %}
-	  <div id="comments_facebook_login_wrap">
-  		<p>
-  			<a href="#login_form" class="twitter_blue simple_login no-text"><span class="text-hidden">Comment with Twitter Login</span></a>
-  			<a href="#login_form" class="facebook_blue simple_login no-text"><span class="text-hidden">Comment with Facebook Login</span></a>
-  			Login to Facebook or Twitter to leave a comment
-  		</p>
-  	</div><!-- end #comments_facebook_login_wrap -->
-	{% endunless %}
-	
-	{% if idea.comments != empty %}
-	  <ul id="comments_list" class="clearfix">
-  	  {% for comment in idea.comments %}
-  	    <li>
-    			<img src="{{comment.user.image_url}}" alt="{{comment.user.nickname}}" />
-    			<p>
-    				<span class="comment_date">{{comment.created_at | date: '%b %d, %Y at %H:%I'}}</span>
-    				<span class="comment_author">{{comment.user.nickname}} wrote...</span>
+
+  <h2 class="box_title"><span>Comments</span></h2>
+  {% unless current_user %}
+    <div id="comments_facebook_login_wrap">
+      <p>
+        <a href="#login_form" class="twitter_blue simple_login no-text"><span class="text-hidden">Comment with Twitter Login</span></a>
+        <a href="#login_form" class="facebook_blue simple_login no-text"><span class="text-hidden">Comment with Facebook Login</span></a>
+        Login to Facebook or Twitter to leave a comment
+      </p>
+    </div><!-- end #comments_facebook_login_wrap -->
+  {% endunless %}
+
+  {% if idea.comments != empty %}
+    <ul id="comments_list" class="clearfix">
+      {% for comment in idea.comments %}
+        <li>
+          <img src="{{comment.user.image_url}}" alt="{{comment.user.nickname}}" />
+          <p>
+            <span class="comment_date">{{comment.created_at | date: '%b %d, %Y at %H:%I'}}</span>
+            <span class="comment_author">{{comment.user.nickname}} wrote...</span>
             {{comment.body | markdown}}
-    			</p>
-    		</li>
-  	  {% endfor %}
-  	</ul><!-- end .comment_wrap -->
-	{% else %}
-	  <p style="margin: 40px 0 10px 10px">
+          </p>
+        </li>
+      {% endfor %}
+    </ul><!-- end .comment_wrap -->
+  {% else %}
+    <p style="margin: 40px 0 10px 10px">
       No comments have been posted yet.
-	  </p>
-	{% endif %}
+    </p>
+  {% endif %}
 
 
 </div><!-- end .block_wrapper -->
