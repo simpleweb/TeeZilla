@@ -8,7 +8,7 @@
       {% paginate space.ideas by 9 %}
         {% for idea in paginate %}
           <div class="large_thumb" id="idea-{{idea.uuid}}">
-            <a href="{{idea.permalink}}">
+            <a href="{{idea.permalink}}" title="link to {{idea.title}}">
               <span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
               <span class="vote_now_prompt">Vote for design &gt;</span>
               <img src="{{idea.images.first.medium_square}}" alt="{{idea.title}}" />
@@ -30,7 +30,7 @@
   {% endif %}
 
   <div id="see_more_tees_button_wrap">
-    <a href="#" class="lnkViewMore grey_button">
+    <a href="#" title="Show more tees" class="lnkViewMore grey_button">
       See more Tees
     </a>
   </div>

@@ -80,13 +80,13 @@
           </a>
 
       <ul id="main_nav">
-        <li><a href="{{space.permalink}}">Voting<span>Get Voting Now</span></a></li>
-        <li><a href="#">Shop<span>Buy Winning Tees</span></a></li>
+        <li><a href="{{space.permalink}}" title="link to TeeZilla voting">Voting<span>Get Voting Now</span></a></li>
+        <li><a href="#" title="link to tee shop">Shop<span>Buy Winning Tees</span></a></li>
         <li class="last red_nav">
           {% if current_user %}
-            <a href="/ideas/new" class="simple_login">
+            <a href="/ideas/new" title="add a new entry" class="simple_login">
           {% else %}
-            <a href="#login_form" class="simple_login">
+            <a href="#login_form" title="login to TeeZilla" class="simple_login">
           {% endif %}
             Submit Your Design
             <span>
@@ -147,15 +147,15 @@
           {% if current_user %}
             <h2>Hey {{current_user.nickname}}!</h2>
             <p>
-              You're signed in. <a href="/auth/signout">Sign out</a>
+              You're signed in. <a href="/auth/signout" title="Sign out of {{current_user.provider}}">Sign out</a>
             </p>
           {% else %}
             <h2>Sign in to vote &amp; submit your design.</h2>
             <p>
-              <a href="/auth/facebook" class="facebook_grey">Sign in with Facebook</a>
+              <a href="/auth/facebook" title="Sign in with Facebook" class="facebook_grey">Sign in with Facebook</a>
             </p>
             <p>
-              <a href="/auth/twitter" class="twitter_grey">Sign in with Twitter</a>
+              <a href="/auth/twitter" title="Sign in with Twitter" class="twitter_grey">Sign in with Twitter</a>
             </p>
           {% endif %}
         </div>
@@ -166,15 +166,15 @@
           {% for idea in space.ideas | limit:1 %}
             <div class="medium_thumb clearfix">
               <a href="{{idea.permalink}}">
-                <img src="{{idea.images.first.square}}" alt="Kreepy Kat Tee" />
+                <img src="{{idea.images.first.square}}" alt="{{idea.title}}" />
               </a>
               <p>
-                <a href="{{idea.permalink}}" class="title_of_tee">
+                <a href="{{idea.permalink}}" title="link to {{idea.title}}" class="title_of_tee">
                   {{idea.title | truncate: 25}}
                 </a>
                 <span class="name_of_designer">{{idea.user.nickname}}</span>
               </p>
-              <a href="#" class="grey_button">
+              <a href="#" title="link to buy {{idea.title}} tee" class="grey_button">
                 Buy Tee
               </a>
 
@@ -188,7 +188,7 @@
 
           {% for idea in space.most_liked_ideas limit:6 %}
             <div class="small_thumb">
-              <a href="{{idea.permalink}}">
+              <a href="{{idea.permalink}}"title="link to {{idea.title}}">
                 <img src="{{idea.images.first.square}}" alt="{{idea.title}} Tee" />
                 <span class="title_of_tee">{{idea.title | truncate: 11}}</span>
               </a>
@@ -202,7 +202,7 @@
           <h3>Latest Tees</h3>
           {% for idea in space.ideas limit:6 %}
             <div class="small_thumb">
-              <a href="{{idea.permalink}}">
+              <a href="{{idea.permalink}}" title="link to {{idea.title}}">
                 <img src="{{idea.images.first.square}}" alt="{{idea.title}} Tee" />
                 <span class="title_of_tee">{{idea.title | truncate: 11}}</span>
               </a>
@@ -224,8 +224,8 @@
         Please Login with Facebook or Twitter:
       </p>
       <div class="fancybox_facebook_login_wrap clearfix">
-        <a href="/auth/facebook" class="facebook_blue">Login with Facebook</a>
-        <a href="/auth/twitter" class="twitter_blue">Login with Twitter</a>
+        <a href="/auth/facebook" title="Sign in with Facebook" class="facebook_blue">Login with Facebook</a>
+        <a href="/auth/twitter" title="Sign in with Twitter" class="twitter_blue">Login with Twitter</a>
       </div><!-- end #fancybox_facebook_login_wrap -->
     </form>
 
@@ -239,8 +239,8 @@
       <h3>{{idea.title}}</h3>
 
       <div class="fancybox_facebook_login_wrap clearfix">
-        <a href="/auth/facebook" class="facebook_blue">Login with Facebook</a>
-        <a href="/auth/twitter" class="twitter_blue">Login with Twitter</a>
+        <a href="/auth/facebook" title="Sign in with Facebook" class="facebook_blue">Sign in with Facebook</a>
+        <a href="/auth/twitter" title="Sign in with Twitter" class="twitter_blue">Sign in with Twitter</a>
       </div><!-- end #fancybox_facebook_login_wrap -->
     </form>
 
@@ -267,8 +267,8 @@
       <div id="footer_content" class="clearfix">
 
       <div id="top_share_icons_wrap">
-        <a href="#share-on-facebook" class="lnkShareFacebook facebook_grey">Share on Facebook</a>
-        <a href="http://twitter.com/share?text=I'm checking out TeeZilla!&amp;count=none&amp;via=TeeZilla&amp;related=rusicHQ" class="lnkShareTwitter twitter_grey">Share on Twitter</a>
+        <a href="#share-on-facebook" title="Share this page on Facebook" class="lnkShareFacebook facebook_grey">Share on Facebook</a>
+        <a href="http://twitter.com/share?text=I'm checking out TeeZilla!&amp;count=none&amp;via=TeeZilla&amp;related=rusicHQ" title="Share this page on Twitter" class="lnkShareTwitter twitter_grey">Share on Twitter</a>
       </div>
 
       <p><a href="#">Teezilla</a> is <a href="http://rusic.com" title="link to Rusic">powered by Rusic</a> &copy;2012  </p>

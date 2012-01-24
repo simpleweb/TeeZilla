@@ -12,19 +12,19 @@
       <div id="main_details_col">
 
         {% if current_user %}
-          <a href="{{idea.like_link}}" data-method="post" class="big_red_button">
+          <a href="{{idea.like_link}}" title="like this tee" data-method="post" class="big_red_button">
             Vote Now!
           </a>
         {% else %}
-          <a href="#vote_form" class="big_red_button simple_login">
+          <a href="#vote_form" class="login to like this tee" class="big_red_button simple_login">
             Vote Now!
           </a>
         {% endif %}
 
         <div id="details_share_icons_wrap">
           <p style="margin-bottom: 4px;">Share on:</p>
-          <a href="#share-on-facebook" class="lnkShareFacebook facebook_grey">Facebook</a>
-          <a href="http://twitter.com/share?text=Vote for {{idea.title}} on TeeZilla!&amp;count=none&amp;via=TeeZilla&amp;related=rusicHQ" class="lnkShareTwitter twitter_grey">Twitter</a>
+          <a href="#share-on-facebook" title="Share this tee on Facebook" class="lnkShareFacebook facebook_grey">Facebook</a>
+          <a href="http://twitter.com/share?text=Vote for {{idea.title}} on TeeZilla!&amp;count=none&amp;via=TeeZilla&amp;related=rusicHQ" title="Share this tee on Twitter" class="lnkShareTwitter twitter_grey">Twitter</a>
 
 
         </div>
@@ -90,8 +90,8 @@
   {% unless current_user %}
     <div id="comments_facebook_login_wrap">
       <p>
-        <a href="#login_form" class="twitter_blue simple_login no-text"><span class="text-hidden">Comment with Twitter Login</span></a>
-        <a href="#login_form" class="facebook_blue simple_login no-text"><span class="text-hidden">Comment with Facebook Login</span></a>
+        <a href="#login_form" title="Sign in with Twitter" class="twitter_blue simple_login no-text"><span class="text-hidden">Comment with Twitter Login</span></a>
+        <a href="#login_form" title="Sign in with Facebook" class="facebook_blue simple_login no-text"><span class="text-hidden">Comment with Facebook Login</span></a>
         Login to Facebook or Twitter to leave a comment
       </p>
     </div><!-- end #comments_facebook_login_wrap -->
