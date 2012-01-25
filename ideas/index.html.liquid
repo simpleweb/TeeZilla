@@ -6,7 +6,7 @@
   {% if space.ideas != empty %}
     <div id="entries">
       {% paginate space.ideas by 9 %}
-        {% for idea in paginate %}
+        {% for idea in pagination.collection %}
           <div class="large_thumb" id="idea-{{idea.uuid}}">
             <a href="{{idea.permalink}}" title="link to {{idea.title}}">
               <span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
