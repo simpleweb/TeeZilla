@@ -564,7 +564,8 @@ a.facebook_grey, a.facebook_grey:visited {
 #main_left_col .block_wrapper ol li {
   font-size: 1.8em;
   margin-bottom: 5px;
-  margin: 0 0 0 15px;
+  margin: 0 0 .4em 15px;
+  line-height: 1.2em;
 }
 
 a.big_red_button, a.big_red_button:visited,
