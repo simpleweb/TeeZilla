@@ -1,5 +1,9 @@
 jQuery(document).ready(function() {
 
+	$("a#inline").fancybox({
+		'hideOnContentClick': true
+	});
+
 	$(".large_thumb").click(function(){
 	     window.location=$(this).find("a").attr("href");
 	     return false;
@@ -152,7 +156,6 @@ jQuery(document).ready(function() {
       }
     }
   });
-
 
 });
 

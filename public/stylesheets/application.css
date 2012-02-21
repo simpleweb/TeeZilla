@@ -946,8 +946,26 @@ h2.box_title span {
   float: left;
 }
 
+div#lightbox-sign-in {
+  float: left;
+  position: relative;
+  width: 300px;
+  margin: 20px 20px 15px 20px;
+}
+
+div#lightbox-sign-in h2 {
+  font-size: 2.6em;
+}
+
+div#lightbox-sign-in p, div#lightbox-sign-in a {
+  float: left;
+  position: relative;
+  clear: left;
+  margin: 0 0 5px 0;
+}
+
 #details_share_icons_wrap a, #details_share_icons_wrap a:visited,
-div#sidebar-sign-in a.twitter_grey, div#sidebar-sign-in a.twitter_grey:visited,
+div#lightbox-sign-in a, div#sidebar-sign-in a.twitter_grey, div#sidebar-sign-in a.twitter_grey:visited,
 div#sidebar-sign-in a.facebook_grey, div#sidebar-sign-in a.facebook_grey:visited {
   float: left;
   color: #333;
@@ -1430,4 +1448,7 @@ form#winning_design_subscription_form input[type=email].error {
   display: inline !important;
   width: 268px !important;
   margin: 0;
+}
+#lightbox-login {
+  margin: 20px;
 }

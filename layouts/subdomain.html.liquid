@@ -24,6 +24,26 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  {% if idea %}
+    <meta property="og:title" content="{{ idea.title }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="http://goape.rusic.com{{ idea.permalink }}"/>
+    <meta property="og:image" content="{{idea.images.first.square}}"/>
+    <meta property="og:site_name" content="{{space.title}}"/>
+    <meta property="og:description" content="{{ idea.content }}" />
+  {% else %}
+    <meta property="og:title" content="{{space.title}}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="http://goape.rusic.com/"/>
+    <meta property="og:image" content="{{ space.ideas.first.images.first.square}}"/>
+    <meta property="og:site_name" content="{{space.title}}"/>
+    <meta property="og:description" content="{{space.summary}}" />
+  {% endif %}
+  
+  <link rel="shortcut icon" href="{{asset_url}}/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{asset_url}}/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{asset_url}}/images/apple-touch-icon-114x114.png">
+
   {{content_for_header}}
 
   <link href="{{asset_url}}/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
@@ -86,13 +106,13 @@
           {% if current_user %}
             <a href="/ideas/new" title="add a new entry" class="simple_login">
           {% else %}
-            <a href="#login_form" title="login to TeeZilla" class="simple_login">
-          {% endif %}
+            <a id="inline" href="#lightbox-sign-in" class="simple_login">
             Submit Your Design
             <span>
               Upload your Tee design to Win
             </span>
-          </a>
+            </a>
+          {% endif %}
         </li>
       </ul>
 
@@ -163,7 +183,9 @@
 
         <div class="block_wrapper">
           <h3>Last Week's Winner</h3>
+          <p>Coming soon!</p>
 
+          <!--
           {% for idea in space.ideas | limit:1 %}
             <div class="medium_thumb clearfix">
               <a href="{{idea.permalink}}">
@@ -179,8 +201,10 @@
                 Buy Tee
               </a>
 
-            </div><!-- end .medium_thumb -->
+            </div>
            {% endfor %}
+           -->
+
         </div><!-- end .block_wrapper -->
 
 
@@ -263,6 +287,20 @@
       </div>
     </form>
   </div>
+
+  {% unless current_user %}
+  <div style="display:none">
+    <div id="lightbox-sign-in">
+      <h2>Sign in to vote &amp; submit your design:</h2>
+      <p>
+        <a href="/auth/facebook" title="Sign in with Facebook" class="facebook_grey">Sign in with Facebook</a>
+      </p>
+      <p>
+        <a href="/auth/twitter" title="Sign in with Twitter" class="twitter_grey">Sign in with Twitter</a>
+      </p>
+    </div>
+  </div>
+  {% endunless %}
 
   <div id="footer_rail">
       <div id="footer_content" class="clearfix">
