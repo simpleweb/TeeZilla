@@ -311,7 +311,12 @@
       <div id="footer_content" class="clearfix">
 
       <div id="top_share_icons_wrap">
-        <a href="#share-on-facebook" title="Share this page on Facebook" class="lnkShareFacebook facebook_grey">Share on Facebook</a>
+        {% if idea %}
+        <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]={{idea.title}}&amp;p[summary]={{idea.content}}&amp;p[url]={{idea.permalink}}&amp;&amp;p[images][0]={{idea.images.first.medium_large}}','sharer','toolbar=0,status=0,width=650,height=325');" href="javascript: void(0)" class="facebook_grey">Facebook</a>
+        {% else %}
+        <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]={{space.title}}&amp;p[summary]={{space.summary}}&amp;p[url]={{space.permalink}}&amp;&amp;p[images][0]={{ space.ideas.first.images.first.square}}','sharer','toolbar=0,status=0,width=650,height=325');" href="javascript: void(0)" class="facebook_grey">Facebook</a>
+        {% endif %}
+        
         <a href="http://twitter.com/share?text=I'm checking out TeeZilla!&amp;count=none&amp;via=TeeZilla&amp;related=rusicHQ" title="Share this page on Twitter" class="lnkShareTwitter twitter_grey">Share on Twitter</a>
       </div>
 
