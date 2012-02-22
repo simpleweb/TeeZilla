@@ -1452,3 +1452,20 @@ form#winning_design_subscription_form input[type=email].error {
 #lightbox-login {
   margin: 20px;
 }
+.expired-overlay {
+background: rgba(000,000,000,.7);
+position: absolute;
+left: 2px;
+top: 2px;
+z-index: 700;
+right: 4px;
+bottom: 2px;
+text-align: center;
+color: #EEE;
+font-size: 2em;
+font-family: 'PacificoRegular', serif;
+display: inline;
+}
+.vote_status_wrapper {
+z-index: 800;
+}
