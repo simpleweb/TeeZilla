@@ -1454,6 +1454,7 @@ form#winning_design_subscription_form input[type=email].error {
 }
 .expired-overlay {
 background: rgba(000,000,000,.7);
+background: url(../images/expired-overlay.png) repeat\9;
 position: absolute;
 left: 2px;
 top: 2px;
@@ -1465,6 +1466,15 @@ color: #EEE;
 font-size: 2em;
 font-family: 'PacificoRegular', serif;
 display: inline;
+}
+.middle {
+display: block;
+position: absolute;
+width: 100%;
+bottom: 25px;
+text-align: center;
+text-shadow: 0px 1px 3px #000000;
+filter: dropshadow(color=#000000, offx=0, offy=1);
 }
 .vote_status_wrapper {
 z-index: 800;
