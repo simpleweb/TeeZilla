@@ -49,14 +49,15 @@ jQuery(document).ready(function() {
   	}
 	}
 	
-	if(window.location.hash !== 'undefined' && window.location.hash == 'shoplogin') {
+	if(window.location.hash !== 'undefined' && window.location.hash == '#shoplogin') {
 	  $.fancybox({
-  		'scrolling'		: 'no',
-  		'titleShow'		: false,
-  		'onClosed'		: function() {
-  		    $(".error").hide();
-  		}
-  	});
+    'scrolling'		: 'no',
+    'titleShow'		: false,
+    'href'       : '/ideas/new',
+    'onClosed'		: function() {
+        $(".error").hide();
+    }
+    });
 	}
 	
 	// Fancy Box Code
