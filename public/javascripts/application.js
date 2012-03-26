@@ -49,6 +49,15 @@ jQuery(document).ready(function() {
   	}
 	}
 	
+	if(window.location.hash !== 'undefined' && window.location.hash == 'shoplogin') {
+	  $.fancybox({
+  		'scrolling'		: 'no',
+  		'titleShow'		: false,
+  		'onClosed'		: function() {
+  		    $(".error").hide();
+  		}
+  	});
+	}
 	
 	// Fancy Box Code
 	$(".simple_login").fancybox({
