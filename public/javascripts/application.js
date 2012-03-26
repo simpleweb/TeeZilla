@@ -50,14 +50,7 @@ jQuery(document).ready(function() {
 	}
 	
 	if(window.location.hash !== 'undefined' && window.location.hash == '#shoplogin') {
-	  $.fancybox({
-    'scrolling'		: 'no',
-    'titleShow'		: false,
-    'href'       : '/ideas/new',
-    'onClosed'		: function() {
-        $(".error").hide();
-    }
-    });
+	  $('a.simple_login').trigger('click');
 	}
 	
 	// Fancy Box Code
