@@ -49,9 +49,6 @@ jQuery(document).ready(function() {
   	}
 	}
 	
-	if(window.location.hash !== 'undefined' && window.location.hash == '#shoplogin') {
-	  $('a.simple_login').trigger('click');
-	}
 	
 	// Fancy Box Code
 	$(".simple_login").fancybox({
@@ -62,6 +59,10 @@ jQuery(document).ready(function() {
 		}
 	});
 
+  if(window.location.hash !== 'undefined' && window.location.hash == '#shoplogin') {
+	  $('a.simple_login').trigger('click');
+	}
+	
   // Twitter sharing
   $(".lnkShareTwitter").click(function() {
     window.open($(this).attr('href'), 'twitter', 'width=550,height=450');
@@ -116,11 +117,7 @@ jQuery(document).ready(function() {
       $form = $('form#winning_design_subscription_form'),
       has_email_address = $form.attr('data-user-has-email-address');
   
-  console.log(has_email_address);
-  
-  if($.trim($flash.text()) === 'Thanks for voting for this Tee!' && has_email_address == "false") {
-    console.log("$form.fancybox()");
-    
+  if($.trim($flash.text()) === 'Thanks for voting for this Tee!' && has_email_address == "false") {    
     $.fancybox($("div#winning_design_subscription").html());
   }
   
