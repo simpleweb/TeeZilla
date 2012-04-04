@@ -1580,3 +1580,61 @@ color: #555555;
   clear: left;
   margin: 0 0 12px 0;
 }
+
+#filter-bar {
+  float: left;
+  position: relative;
+  clear: left;
+  width: 100%;
+  margin: 10px 0 15px 0;
+  padding: 0 0 12px 0;
+  border-bottom: 1px solid #EEEEEE;
+  text-align: right;
+}
+
+#filter-bar a {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 5px;
+}
+
+#filter-bar label {
+  margin: 0 5px 0 0;
+  font-size: 1.4em;
+  color: #999;
+}
+
+.btn, .btn:link, .btn:visited, .btn:active {
+  display: block;
+  font-size: 1.5em;
+  font-weight: normal;
+  background-color: #fff;
+  border: 1px solid #666666;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-box-shadow: 2px 2px 0 #666666;
+  -webkit-box-shadow: 2px 2px 0 #666666;
+  box-shadow: 2px 2px 0 #666666;
+  padding: 6px 15px;
+  text-align: center;
+  display: block;
+  line-height: 1em;
+  color: #333;
+}
+
+.btn:hover {
+  background-color: #efefef;
+  text-decoration: none;
+  border-color: #333;
+}
+
+.btn.active {
+  background-color: #efefef;
+  text-decoration: none;
+  border-color: #CCC;
+  color: #999;
+  -moz-box-shadow: 2px 2px 0 #CCCCCC;
+  -webkit-box-shadow: 2px 2px 0 #CCCCCC;
+  box-shadow: 2px 2px 0 #CCCCCC;
+}

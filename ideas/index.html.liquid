@@ -3,6 +3,12 @@
   <h1 class="box_title"><span>Teezilla Tees are only made by your votes.</span><span class="homepage_title_pointer"><!-- IE Fix --></span></h1>
   <br class="clrb" />
 
+  <div id="filter-bar">
+    <label>show:</label>
+    <a href="{{space.permalink}}" title="link to show active tee's" class="btn active">active tees</a>
+    <a href="{{space.permalink}}?filter=expired" title="link to show expired tee's" class="btn">expired tees</a>
+  </div>
+
   {% if space.ideas != empty %}
     <div id="entries">
       {% paginate space.ideas by 9 %}
