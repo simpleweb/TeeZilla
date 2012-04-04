@@ -1555,6 +1555,11 @@ color: #555555;
   position: relative;
   width: 660px;
   padding: 20px 30px;
+  line-height: 1.4em !important;
+}
+
+.htmlbox p {
+  line-height: 1.4em;
 }
 
 .htmlbox h1 {
