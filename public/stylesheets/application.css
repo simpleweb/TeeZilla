@@ -1643,3 +1643,7 @@ color: #555555;
   -webkit-box-shadow: 2px 2px 0 #CCCCCC;
   box-shadow: 2px 2px 0 #CCCCCC;
 }
+
+.content li {
+  margin: 0 0 15px 0;
+}
