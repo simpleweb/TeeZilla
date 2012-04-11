@@ -79,8 +79,19 @@ jQuery(document).ready(function() {
     window.offset = (window.page*window.pagesize)-window.pagesize;
 
     $("div#entries").find("div.large_thumb").slice(window.offset,window.offset+window.pagesize).show();
-
-    $.get('/', {page: ++window.page}, function(data) {
+    
+    var queryString = window.location.search.replace('?', '');
+    var pairs = queryString.split('&');
+    var options = {};
+    var tmp;
+    
+    for (i=0;i<pairs.length;i++){
+      tmp = pairs[i];
+      options[tmp.split('=')[0]] = tmp.split('=')[1];
+    }
+    options['page'] = ++window.page;
+    
+    $.get('/', options, function(data) {
       $(".large_thumb", data).hide().appendTo("div#entries");
       showHideMore($("div#entries"));
       done && done();
