@@ -5,7 +5,7 @@
 
   <div id="filter-bar">
     <label>show:</label>
-    <a href="{{space.permalink}}" title="link to show active tee's" class="btn {% if filter == "expired" %}{% else %}active{% endif %}">active tees</a>
+    <a href="{{space.permalink}}?filter=active" title="link to show active tee's" class="btn {% if filter == "active" %}active{% endif %}">active tees</a>
     <a href="{{space.permalink}}?filter=expired" title="link to show expired tee's" class="btn {% if filter == "expired" %}active{% endif %}">expired tees</a>
   </div>
 
