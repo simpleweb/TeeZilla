@@ -11,7 +11,7 @@
 
   {% if space.ideas != empty %}
     <div id="entries">
-      {% paginate space.ideas by 9 %}
+      {% paginate space.ideas by 18 %}
         {% for idea in pagination.collection %}
           <div class="large_thumb" id="idea-{{idea.uuid}}">
             <a href="{{idea.permalink}}" title="link to {{idea.title}}">
