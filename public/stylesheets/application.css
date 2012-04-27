@@ -1647,3 +1647,7 @@ color: #555555;
 .content li {
   margin: 0 0 15px 0;
 }
+.submit-text {
+  font-family: 'PacificoRegular', serif;
+  font-size: 1.8em;
+}
