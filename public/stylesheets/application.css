@@ -1648,6 +1648,12 @@ color: #555555;
   margin: 0 0 15px 0;
 }
 .submit-text {
-  font-family: 'PacificoRegular', serif;
-  font-size: 1.8em;
+  font-family: 'PacificoRegular', serif !important;
+  font-size: 1em !important;
+  margin: 3px 0 4px 0 !important;
+  padding: 0 !important;
+}
+.teaser-text {
+  margin: 0 !important;
+  padding: 0 !important;
 }

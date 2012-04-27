@@ -89,16 +89,12 @@
           {% if current_user %}
             <a href="/ideas/new" title="add a new entry" class="simple_login">
               <span class="submit-text">Submit Your Design</span>
-              <span>
-                <span class="teaser-text">Upload your Tee design to Win</span>
-              </span>
+              <span class="teaser-text">Upload your Tee design to Win</span>
             </a>
           {% else %}
             <a id="inline" href="#lightbox-sign-in" class="simple_login">
-            Submit Your Design
-            <span>
-              Upload your Tee design to Win
-            </span>
+            <span class="submit-text">Submit Your Design</span>
+            <span class="teaser-text">Upload your Tee design to Win</span>
             </a>
           {% endif %}
         </li>
