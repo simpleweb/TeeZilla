@@ -89,7 +89,7 @@
           {% if current_user %}
             <a href="/ideas/new" title="add a new entry" class="simple_login">
               <span class="submit-text">Submit</span>
-              <span class="teaser-text">Your design and win £200.00</span>
+              <span class="teaser-text">your design and win £200.00</span>
             </a>
           {% else %}
             <a id="inline" href="#lightbox-sign-in" class="simple_login">
@@ -150,9 +150,7 @@
         {% if current_user %}
         <div id="sidebar-sign-in" class="block_wrapper">
             <h2>Hey {{current_user.nickname}}!</h2>
-            <p>
-              You're signed in. <a href="/auth/signout" title="Sign out of {{current_user.provider}}">Sign out</a>
-            </p>
+            <p>You're signed in. <a href="/auth/signout" title="Sign out of {{current_user.provider}}">Sign out</a></p>
         </div>
         {% endif %}
 
