@@ -83,18 +83,18 @@
           </a>
 
       <ul id="main_nav">
-        <li><a href="{{space.permalink}}" title="link to TeeZilla voting">Voting<span>Get Voting Now</span></a></li>
+        <li><a href="{{space.permalink}}" title="link to TeeZilla voting">Vote<span>Rate your favourite shirt</span></a></li>
         <li><a href="http://teezilla.myshopify.com/" title="link to TeeZilla shop">Shop<span>Buy Winning Tees</span></a></li>
         <li class="last red_nav">
           {% if current_user %}
             <a href="/ideas/new" title="add a new entry" class="simple_login">
-              <span class="submit-text">Submit Your Design</span>
-              <span class="teaser-text">Upload your Tee design to Win</span>
+              <span class="submit-text">Submit</span>
+              <span class="teaser-text">Your design and win £200.00</span>
             </a>
           {% else %}
             <a id="inline" href="#lightbox-sign-in" class="simple_login">
-            <span class="submit-text">Submit Your Design</span>
-            <span class="teaser-text">Upload your Tee design to Win</span>
+            <span class="submit-text">Submit</span>
+            <span class="teaser-text">Your design and win £200.00</span>
             </a>
           {% endif %}
         </li>
@@ -136,39 +136,25 @@
 
       <div id="main_left_col">
 
-        <div class="block_wrapper">
-          <h2>How to take part:</h2>
-          <ol>
-            <li>Login with your Facebook or Twitter account</li>
-            <li>Vote on the designs that you like</li>
-          </ol>
+        <div id="what-is-teezilla" class="block_wrapper">
           
-          <h2>Feeling arty?  Fancy some cash?</h2>
-          <ol>
-            <li>Login with your Facebook or Twitter account</li>
-            <li>Submit your own design</li>
-            <li>Get as many votes as possible in 14 days</li>
-            <li>Every month the top design gets printed and sold in the shop and the winner gets a cut of the sales... Amazing!</li>
-          </ol>
+          <h2>What is Teezilla?</h2>
+          <p>T-Shirts designed by <strong>YOU</strong>.</p>
+          <p><strong>People</strong> upload their designs and every month the <strong>people</strong> choose their favourite to be printed and sold.</p>
+          <p>Monthly winning entries get £200 or £6 from every sale.</p>
+          <p>It's not the best designs that win, it's the most popular.</p>
+          <p>Started by a pair of old creative freaks, Teezilla democratises the T-Shirt shop and gives you the power.</p>
 
         </div><!-- end .block_wrapper -->
 
+        {% if current_user %}
         <div id="sidebar-sign-in" class="block_wrapper">
-          {% if current_user %}
             <h2>Hey {{current_user.nickname}}!</h2>
             <p>
               You're signed in. <a href="/auth/signout" title="Sign out of {{current_user.provider}}">Sign out</a>
             </p>
-          {% else %}
-            <h2>Sign in to vote &amp; submit your design.</h2>
-            <p>
-              <a href="/auth/facebook" title="Sign in with Facebook" class="facebook_grey">Sign in with Facebook</a>
-            </p>
-            <p>
-              <a href="/auth/twitter" title="Sign in with Twitter" class="twitter_grey">Sign in with Twitter</a>
-            </p>
-          {% endif %}
         </div>
+        {% endif %}
 
         <div class="block_wrapper">
           <h3>Last Month's Winner</h3>
@@ -182,6 +168,7 @@
                   Delicate Skull
                 </a>
                 <span class="name_of_designer">by Florence Boyd</span>
+                <span class="price">£19.99</span>
               </p>
               <a href="http://teezilla.myshopify.com/collections/all-tshirts/products/delicate-skull" title="link to buy {{idea.title}} tee" class="grey_button">
                 Buy Tee

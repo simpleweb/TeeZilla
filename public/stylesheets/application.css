@@ -1657,3 +1657,38 @@ color: #555555;
   font-size: .5em !important;
   margin: 3px 0 0 0 !important;
 }
+
+#what-is-teezilla p {
+  margin: 0 10px 16px 8px;
+  font-size: 16px;
+}
+
+.block_wrapper {
+  float: left;
+  position: relative;
+  clear: left;
+  width: 100%:
+}
+
+#interested-people {
+  float: left;
+  position: relative;
+  clear: left;
+  margin: 12px 0 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#interested-people li {
+  float: left;
+  position: relative;
+  margin: 0 10px 0 0;
+  border: 1px solid #333333;
+  list-style-type: none;
+}
+
+#interested-people li img {
+  float: left;
+  position: relative;
+}
+
