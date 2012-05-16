@@ -63,6 +63,15 @@
 
 </div><!-- end .block_wrapper -->
 
+<!-- Interested Users -->
+<div class="block_wrapper">
+  <h2 class="box_title"><span>People interested in this tee</span></h2>
+  <ul id="interested-people">
+    {% for user in idea.interested_users %}
+      <li><a href="{{ user.profile_url }}" title="{{ user.nickname }}'s {{ user.provider }} profile"><img src="{{ user.image_url }}" alt="{{ user.nickname }}" width="40" height="40" class="avatar" /></a></li>
+    {% endfor %}
+  </ul>
+</div>
 
 {% if current_user %}
 <div class="block_wrapper">
@@ -83,16 +92,6 @@
   </form>
 </div>
 {% endif %}
-
-<!-- Interested Users -->
-<div class="block_wrapper">
-  <h2 class="box_title"><span>People interested in this tee</span></h2>
-  <ul id="interested-people">
-    {% for user in idea.interested_users %}
-      <li><a href="{{ user.profile_url }}" title="{{ user.nickname }}'s {{ user.provider }} profile"><img src="{{ user.image_url }}" alt="{{ user.nickname }}" width="40" height="40" class="avatar" /></a></li>
-    {% endfor %}
-  </ul>
-</div>
 
 <div class="block_wrapper">
 
