@@ -1,5 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text);
+
 html {
-  font-family: 'VollkornRegular', serif;
+  font-family: 'Crimson Text', serif;
 }
 /* Change this to fit the site */
 body {
@@ -554,6 +556,7 @@ a.facebook_grey, a.facebook_grey:visited {
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+  width: 260px;
 }
 
 #main_left_col .block_wrapper ol {
@@ -674,7 +677,6 @@ input.big_red_button:active {
   padding: 10px;
   cursor: pointer;
   width: 188px;
-  min-height: 238px;
 }
 
 .large_tee_hover {
