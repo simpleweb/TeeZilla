@@ -168,30 +168,4 @@ jQuery(document).ready(function() {
     }
   });
 
-  (function($){
-    $.fn.equalHeights = function(opts) {
-      
-      var height;
-      var max_height = 0;
-      var self = this;
-      
-      return this.each(function(i){
-        height = $(this).height();
-        max_height = (height > max_height) ? height : max_height;
-        if(self.length == (i+1)){
-          $(self).height(max_height);
-        }
-      });
-      
-    }
-  }(jQuery));
-  
-  $(window).resize(function(){
-    $("#entries .large_thumb").equalHeights();
-  });
-
-});
-
-$(window).load(function(){
-  $("#entries .large_thumb").equalHeights();
 });
