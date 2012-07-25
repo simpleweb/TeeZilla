@@ -644,7 +644,7 @@ input.big_red_button:active {
 .small_thumb {
   float: left;
   margin: 0 7px 10px 0;
-  width: 80px;
+  width: 79px;
 }
 
 .small_thumb a, .small_thumb a:visited {
@@ -661,8 +661,8 @@ input.big_red_button:active {
 .small_thumb a img, .small_thumb a:visited img {
   border: 2px solid #adadad;
   margin: 0 0 3px 0;
-  width: 78px;
-  height: 78px;
+  width: 72px;
+  height: 72px;
 }
 
 .small_thumb a:hover img {
