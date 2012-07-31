@@ -1724,3 +1724,16 @@ color: #555555;
     padding: 0 20px;
     border-right: 1px solid #CCCCCC;
 }
+
+.charity-label {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    padding: 3px 10px; 
+    background: #C60909;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-shadow: 0 1px 0 #222222;
+    -webkit-box-shadow: 1px 1px 0px 1px #444444;
+    box-shadow: 1px 1px 0px 1px #444444;
+}
