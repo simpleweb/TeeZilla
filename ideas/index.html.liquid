@@ -15,7 +15,6 @@
         {% for idea in pagination.collection %}
           <div class="large_thumb" id="idea-{{idea.uuid}}">
             <a href="{{idea.permalink}}" title="link to {{idea.title}}">
-              <span class="charity-label">Charity entry</span>
               <span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
               <span class="vote_now_prompt">Vote for design &gt;</span>
               <img src="{{idea.images.first.medium_square}}" alt="{{idea.title}}" />
