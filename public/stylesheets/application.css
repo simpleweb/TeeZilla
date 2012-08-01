@@ -1737,3 +1737,10 @@ color: #555555;
     -webkit-box-shadow: 1px 1px 0px 1px #444444;
     box-shadow: 1px 1px 0px 1px #444444;
 }
+
+.charity-label-large {
+    float: left;
+    position: relative;
+    clear: left;
+    margin: 5px 0 15px -6px;
+}

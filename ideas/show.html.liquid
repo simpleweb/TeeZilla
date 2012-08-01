@@ -1,3 +1,10 @@
+{% if env == 'production' %}
+  {% assign asset_url='http://teezilla.s3.amazonaws.com' %}
+{% elsif env == 'staging' %}
+  {% assign asset_url='http://teezilla.s3.amazonaws.com' %}
+{% else %}
+  {% assign asset_url='http://teezilla-assets' %}
+{% endif %}
 <div class="block_wrapper">
 
   <h1 class="box_title"><span>{{idea.title | truncate: 45}}</span></h1>
@@ -20,7 +27,10 @@
             Vote Now!
           </a>
         {% endif %}
-  
+
+        {% if idea.custom3 == '1' %}
+          <a href="http://teezilla.myshopify.com/pages/charity-take-over-how-it-works" title="Link to details of TeeZilla charity contest" class="charity-label-large"><img src="{{asset_url}}/images/charitylabel.png" alt="charity entry" /></a>
+        {% endif %}
 
         <div id="details_share_icons_wrap">
           <p style="margin-bottom: 4px;">Share on:</p>
