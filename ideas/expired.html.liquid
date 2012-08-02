@@ -21,8 +21,8 @@
 					
 				<p>
 					<span class="designer_name_title">Designer:</span>
-					<img src="{{idea.user.image_url}}" alt="Name of User" />
-					<span class="designer_name">{{idea.user.nickname}}</span>
+					<a href="{{ idea.user.profile_url }}" title="link to {{ idea.user.nickname }}'s profile on {{ idea.user.provider }}"><img src="{{idea.user.image_url}}" alt="{{ idea.user.nickname }}'s avatar" /></a>
+					<span class="designer_name"><a href="{{ idea.user.profile_url }}" title="link to {{ idea.user.nickname }}'s profile on {{ idea.user.provider }}">{{idea.user.nickname}}</a></span>
 				</p>
 				
 			</div><!-- end #main_details_col -->
@@ -47,6 +47,15 @@
 
 </div><!-- end .block_wrapper -->
 
+<!-- Interested Users -->
+<div class="block_wrapper">
+  <h2 class="box_title"><span>People interested in this tee</span></h2>
+  <ul id="interested-people">
+    {% for user in idea.interested_users %}
+      <li><a href="{{ user.profile_url }}" title="{{ user.nickname }}'s {{ user.provider }} profile"><img src="{{ user.image_url }}" alt="{{ user.nickname }}" width="40" height="40" class="avatar" /></a></li>
+    {% endfor %}
+  </ul>
+</div>
 
 {% if current_user %}
 <div class="block_wrapper">
@@ -85,10 +94,10 @@
 	  <ul id="comments_list" class="clearfix">
   	  {% for comment in idea.comments %}
   	    <li>
-    			<img src="{{comment.user.image_url}}" alt="{{comment.user.nickname}}" />
+    			<a href="{{ comment.user.profile_url }}" title="link to {{ comment.user.nickname }}'s profile on {{ comment.user.provider }}"><img src="{{comment.user.image_url}}" alt="{{comment.user.nickname}}" /></a>
     			<p>
     				<span class="comment_date">{{comment.created_at | date: '%b %d, %Y at %H:%I'}}</span>
-    				<span class="comment_author">{{comment.user.nickname}} wrote...</span>
+    				 <span class="comment_author"><a href="{{ comment.user.profile_url }}" title="link to {{ comment.user.nickname }}'s profile on {{ comment.user.provider }}">{{comment.user.nickname}}</a> wrote...</span>
             {{comment.body | markdown}}
     			</p>
     		</li>
