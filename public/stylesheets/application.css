@@ -756,6 +756,7 @@ input.big_red_button:active {
   display: block;
   color: #333;
   clear: both;
+  text-transform: lowercase;
 }
 
 .large_thumb a:hover span.title_of_tee, .large_tee_hover a span.title_of_tee, .large_tee_hover a:visited span.title_of_tee {
@@ -1684,7 +1685,7 @@ color: #555555;
 #interested-people li {
   float: left;
   position: relative;
-  margin: 0 10px 0 0;
+  margin: 10px 10px 0 0;
   border: 1px solid #333333;
   list-style-type: none;
 }
