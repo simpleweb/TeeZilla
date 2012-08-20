@@ -12,6 +12,14 @@
 			</div><!-- end #large_tee_col -->
 			
 			<div id="main_details_col">
+			
+    		{% if idea.custom3 == '1' %}
+              <span class="charity-tag">Temwa charity entry</span>
+            {% endif %}
+            
+            {% if idea.custom3 == '2' %}
+              <span class="charity-tag">WhizzKidz charity entry</span>
+            {% endif %}
 				
 			<div id="details_share_icons_wrap">
 			  <p style="margin-bottom: 4px;">Share on:</p>
