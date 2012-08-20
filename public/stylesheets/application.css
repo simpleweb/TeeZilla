@@ -1745,3 +1745,15 @@ color: #555555;
     clear: left;
     margin: 5px 0 15px -6px;
 }
+
+.charity-tag {
+    float: left;
+    position: relative;
+    clear: left;
+    width: 100%;
+    margin: 10px 0 10px 0;
+    padding: 0 0 10px 0;
+    font-size: 15px;
+    color: #C60909;
+    border-bottom: 1px dotted #CCCCCC;
+}

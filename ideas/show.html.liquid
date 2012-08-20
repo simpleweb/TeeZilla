@@ -29,7 +29,11 @@
         {% endif %}
 
         {% if idea.custom3 == '1' %}
-          <a href="http://teezilla.myshopify.com/pages/charity-take-over-how-it-works" title="Link to details of TeeZilla charity contest" class="charity-label-large"><img src="{{asset_url}}/images/charitylabel.png" alt="charity entry" /></a>
+          <span class="charity-tag">Temwa charity entry</span>
+        {% endif %}
+        
+        {% if idea.custom3 == '2' %}
+          <span class="charity-tag">WhizzKidz charity entry</span>
         {% endif %}
 
         <div id="details_share_icons_wrap">
