@@ -20,6 +20,10 @@
                   <span class="charity-label">Charity entry</span>
               {% endif %}
               
+              {% if idea.custom3 == '2' %}
+                <span class="charity-label">Charity entry</span>
+              {% endif %}
+              
               <span class="vote_status_wrapper" title="Number of votes">{{idea.likes}}</span>
               <span class="vote_now_prompt">Vote for design &gt;</span>
               <img src="{{idea.images.first.medium_square}}" alt="{{idea.title}}" />

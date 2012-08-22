@@ -41,6 +41,9 @@ jQuery(document).ready(function() {
       "idea[content]": {
         required: true
       },
+      "form[submit]": {
+        required: true
+      },
       "idea[custom1]": {
         required: true,
         email: true
@@ -63,6 +66,9 @@ jQuery(document).ready(function() {
       },
       "idea[custom2]": {
         required: "Your name is required."
+      },
+      "form[submit]": {
+        required: "You must read and accept the Terms & Conditions"
       },
       "idea[content]": {
         required: "Please describe your Tee",
