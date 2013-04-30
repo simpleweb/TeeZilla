@@ -1,21 +1,21 @@
 {% if env == 'production' %}
-  {% assign asset_url='http://teezilla.s3.amazonaws.com' %}
+	{% assign asset_url='http://teezilla.s3.amazonaws.com' %}
 {% elsif env == 'staging' %}
-  {% assign asset_url='http://teezilla.s3.amazonaws.com' %}
+	{% assign asset_url='http://teezilla.s3.amazonaws.com' %}
 {% else %}
-  {% assign asset_url='http://localhost:8080' %}
+	{% assign asset_url='http://localhost:8080' %}
 {% endif %}
 
 <script src="{{asset_url}}/javascripts/forms.js" type="text/javascript"></script>
 <div id="facebook_twitter_entry_form">
 	<form id="entry_form" method="post" action="/ideas" class="clearfix" enctype="multipart/form-data">
 		<div class="form_left_col">
-			
+
 			<p class="error none">Oops! Please correct the following fields:</p>
 			<div class="input clearfix">
 				<label for="idea_custom1">Email: </label>
 				<input type="text" id="idea_custom1" name="idea[custom1]" />
-				
+
 			</div>
 			<div class="input clearfix">
 				<label for="idea_custom2">Name: </label>
@@ -29,28 +29,29 @@
 				<label for="idea_content">Short Tee Description: </label>
 				<textarea id="idea_content" name="idea[content]"></textarea>
 			</div>
-			
+
 			<div class="input clearfix">
 				<label for="idea_images_attributes_0_file">Upload design: </label>
 				<input type="file" id="idea_images_attributes_0_file" name="idea[images_attributes][0][file]" />
 			</div>
-			
+
 			<div class="input clearfix">
 				<label for="idea_should_post_to_social" class="checkbox">Share on {{current_user.provider}} </label>
 				<input type="checkbox" id="idea_should_post_to_social" name="idea[should_post_to_social]" class="checkbox" checked="checked" />
 			</div>
-			
+
 			<div class="input clearfix">
 				<label for="aggreement_accept" class="checkbox">I have read and accept the <a href="http://teezilla.myshopify.com/pages/terms-conditions" title="link to the Teezilla terms & conditions">Terms &amp; Conditions.</a> </label>
 				<input type="checkbox" id="aggreement_accept" name="aggreement_accept" class="checkbox" />
 			</div>
-			
+
 			<div class="input clearfix">
+					<input type="hidden" id="idea_custom4" name="idea[custom4]" value="4" />
 				<input type="submit" value="Submit your design" class="big_red_button" name="form[submit]" />
 			</div>
-			
+
 		</div><!-- end .form_left_col -->
-		
+
 		<div class="form_right_col">
 			<h4>Checklist</h4>
 			<ul>
@@ -58,10 +59,10 @@
 				<li>This tshirt is my own idea and doesn't come from another creative persons' idea</li>
 				<li>I agree to this site's Terms and Conditions</li>
 				<li>I’d like to hear from TeeZil.la if my design wins</li>
-				
+
 			</ul>
 		</div><!-- end #form_right_col -->
-		
+
 	</form>
 
 </div><!-- end #facebook_twitter_vote_form -->

@@ -952,7 +952,7 @@ h2.box_title span {
   float: left;
 }
 
-div#lightbox-sign-in {
+div#lightbox-sign-in, div#lightbox-closed {
   float: left;
   position: relative;
   width: 300px;
@@ -1494,7 +1494,7 @@ z-index: 800;
 TOP BAR
 -------------------------------*/
 
-#support-topbar { 
+#support-topbar {
   position: relative;
   width: 950px;
   margin: -6px auto 16px auto;
@@ -1700,14 +1700,18 @@ color: #555555;
     float: left;
     position: relative;
     clear: left;
-    width: 960px;
-    margin: 40px 0 20px 20px;
+    width: 978px;
+    margin: 40px 0 0 0;
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
 }
 
+#takeover-block p {
+  font-size: 17px;
+}
+
 #takeover-block h1 {
-    margin: 15px 0 5px 0;
+    margin: 25px 0 5px 0;
     color: #C60909;
     font-size: 26px;
 }
@@ -1718,10 +1722,26 @@ color: #555555;
     left: -70px;
 }
 
+#takeover-date {
+  float: left;
+  position: relative;
+  clear: left;
+  width: 100%;
+  margin-bottom: 20px;
+  background: #C60909;
+  text-align: center;
+  font-size: 13px;
+}
+
+#takeover-date p {
+  margin: 8px 0 10px 0;
+  color: #FFFFFF;
+}
+
 .charity-logo {
     float: left;
     position: relative;
-    height: 90px;
+    height: 106px;
     margin: 0 20px 0 0;
     padding: 0 20px;
     border-right: 1px solid #CCCCCC;
@@ -1731,7 +1751,7 @@ color: #555555;
     position: absolute;
     top: 160px;
     left: 0;
-    padding: 3px 10px; 
+    padding: 3px 10px;
     background: #C60909;
     color: #FFFFFF;
     font-size: 14px;

@@ -31,9 +31,17 @@
         {% if idea.custom3 == '1' %}
           <span class="charity-tag">Temwa charity entry</span>
         {% endif %}
-        
+
         {% if idea.custom3 == '2' %}
           <span class="charity-tag">WhizzKidz charity entry</span>
+        {% endif %}
+
+        {% if idea.custom3 == '3' %}
+          <span class="charity-tag">Deki charity entry</span>
+        {% endif %}
+        
+        {% if idea.custom4 == '4' %}
+          <span class="charity-tag">Women's Aid charity entry</span>
         {% endif %}
 
         <div id="details_share_icons_wrap">
@@ -41,7 +49,7 @@
           <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]={{idea.title}}&amp;p[summary]={{idea.content}}&amp;p[url]=http://teezilla.rusic.com{{idea.permalink}}&amp;&amp;p[images][0]={{idea.images.first.medium_large}}','sharer','toolbar=0,status=0,width=650,height=325');" href="javascript: void(0)" class="facebook_grey">Facebook</a>
           <a href="http://twitter.com/share?text=Vote for {{idea.title}} on TeeZilla!&amp;count=none&amp;via=TeeZillaHQ&amp;related=rusicHQ" title="Share this tee on Twitter" class="lnkShareTwitter twitter_grey">Twitter</a>
         </div>
-        
+
         <p>
           <span class="designer_name_title">Designer:</span>
           <a href="{{ idea.user.profile_url }}" title="link to {{ idea.user.nickname }}'s profile on {{ idea.user.provider }}"><img src="{{idea.user.image_url}}" alt="{{ idea.user.nickname }}'s avatar" /></a>
@@ -141,6 +149,5 @@
 
 
 </div><!-- end .block_wrapper -->
-
 
 

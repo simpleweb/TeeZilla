@@ -3,7 +3,7 @@
 {% elsif env == 'staging' %}
   {% assign asset_url='http://teezilla.s3.amazonaws.com' %}
 {% else %}
-  {% assign asset_url='http://teezilla-assets' %}
+  {% assign asset_url="http://rusic-themes/TeeZilla/public" %}
 {% endif %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -39,7 +39,7 @@
     <meta property="og:site_name" content="{{space.title}}"/>
     <meta property="og:description" content="{{space.summary}}" />
   {% endif %}
-  
+
   <link rel="shortcut icon" href="{{asset_url}}/images/favicon.ico">
   <link rel="apple-touch-icon" sizes="72x72" href="{{asset_url}}/images/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="114x114" href="{{asset_url}}/images/apple-touch-icon-114x114.png">
@@ -64,9 +64,9 @@
 <body>
 
   <div id="fb-root"></div>
-    
+
   <div id="header_rail">
-    
+
       <div id="support-topbar">
         <ul>
           <li class="about"><a href="http://teezilla.co.uk/pages/about-teezilla" title="link to TeeZilla about page">About TeeZilla</a></li>
@@ -76,8 +76,12 @@
           <li><a href="http://teezilla.co.uk/pages/terms-conditions" title="link toTeeZilla terms & conditions">Terms &amp; conditions</a></li>
         </ul>
       </div>
-    
+
       <div id="header_content" class="clearfix">
+
+      <div id="takeover-logo">
+          <a href="{{space.permalink}}"><img src="{{asset_url}}/images/takeover-logo.png" alt="TeeZilla take over logo" /></a>
+      </div>
 
       <a href="{{space.permalink}}" id="main_logo">
           TeeZil.la Website
@@ -87,22 +91,42 @@
         <li><a href="{{space.permalink}}" title="link to TeeZilla voting">Vote<span>Rate your favourite shirt</span></a></li>
         <li><a href="http://teezilla.co.uk/" title="link to TeeZilla shop">Shop<span>Buy Winning Tees</span></a></li>
         <li class="last red_nav">
-          {% if current_user %}
-            <a href="/ideas/new" title="add a new entry" class="simple_login">
+          {% if space.interactive %}
+
+            {% if current_user %}
+              <a href="/ideas/new" title="add a new entry" class="simple_login">
+                <span class="submit-text">Submit</span>
+                <span class="teaser-text">your design</span>
+              </a>
+            {% else %}
+              <a id="inline" href="#lightbox-sign-in" class="simple_login">
               <span class="submit-text">Submit</span>
-              <span class="teaser-text">your design</span>
-            </a>
+              <span class="teaser-text">Your design</span>
+              </a>
+            {% endif %}
+
           {% else %}
-            <a id="inline" href="#lightbox-sign-in" class="simple_login">
-            <span class="submit-text">Submit</span>
-            <span class="teaser-text">Your design</span>
+          
+            <a id="inline" href="#lightbox-closed" class="simple_login">
+              <span class="submit-text">Submit</span>
+              <span class="teaser-text">Your design</span>
             </a>
+          
           {% endif %}
         </li>
       </ul>
 
 
       <div id="main_arrow"><!-- IE Fix --></div>
+
+      <div id="takeover-block">
+            <div class="charity-logo"><a href="http://teezilla.co.uk/pages/charity-take-over-how-it-works"><img src="{{asset_url}}/images/charity-logo-womensaid-small.png" alt="Temwa logo" /></a></div>
+            <h1>TeeZilla Charity Take Over</h1>
+            <p><a href="http://teezilla.co.uk/pages/charity-take-over-how-it-works">We are currently partnered with Women’s Aid! Click here to find out more.</a></p>
+      </div>
+      <div id="takeover-date">
+        <p>Entries open at 12pm BST on June 3rd 2013</p>
+      </div>
 
     </div><!-- #header_content end -->
     </div><!-- #header_rail end -->
@@ -137,7 +161,7 @@
       <div id="main_left_col">
 
         <div id="what-is-teezilla" class="block_wrapper">
-          
+
           <h2>What is TeeZilla?</h2>
           <p>T-Shirts designed by <strong>YOU</strong>.</p>
           <p><strong>People</strong> upload their designs and every month the <strong>people</strong> choose their favourite to be printed and sold in the TeeZilla store.</p>
@@ -156,17 +180,17 @@
           <h3>Last Month's Winner</h3>
 
             <div class="medium_thumb clearfix">
-              <a href="http://teezilla.co.uk/products/beastie-boys" title="link to Joshua K. Marshall's tee in the TeeZilla store">
-                <img src="{{asset_url}}/images/winner_august12.png" alt="Beastie Boys" />
+              <a href="http://teezilla.co.uk/products/search-and-destroy" title="link to Teo Surman's tee in the TeeZilla store">
+                <img src="{{asset_url}}/images/winner_october12.png" alt="Search" />
               </a>
               <p>
-                <a href="http://teezilla.co.uk/products/beastie-boys" title="link to Joshua K. Marshall's tee in the TeeZilla store" class="title_of_tee">
-                  Beastie Boys
+                <a href="http://teezilla.co.uk/products/search-and-destroy" title="link to Teo Surman's tee in the TeeZilla store" class="title_of_tee">
+                  Search and Destroy
                 </a>
-                <span class="name_of_designer">by Joshua K. Marshall</span>
+                <span class="name_of_designer">by Teo Surman</span>
                 <span class="price">£19.99</span>
               </p>
-              <a href="http://teezilla.co.uk/products/beastie-boys" title="link to buy Joshua K. Marshall's tee in the TeeZilla store" class="grey_button">
+              <a href="http://teezilla.co.uk/products/search-and-destroy" title="link to buy Teo Surman's tee in the TeeZilla store" class="grey_button">
                 Buy Tee
               </a>
 
@@ -269,6 +293,12 @@
   </div>
   {% endunless %}
   
+  <div style="display:none">
+    <div id="lightbox-closed">
+      <h2>Entries open at 12pm BST on June 3rd 2013, please come back then to submit your designs</h2>
+    </div>
+  </div>
+
   <!-- About TeeZilla -->
   <div style="display:none">
     <div id="teezilla-about" class="htmlbox">
@@ -289,7 +319,7 @@
         {% else %}
         <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]={{space.title}}&amp;p[summary]={{space.summary}}&amp;p[url]=http://teezilla.rusic.com&amp;&amp;p[images][0]=http://teezilla.s3.amazonaws.com/images/apple-touch-icon-114x114.png','sharer','toolbar=0,status=0,width=650,height=325');" href="javascript: void(0)" class="facebook_grey">Share on Facebook</a>
         {% endif %}
-        
+
         <a href="http://twitter.com/share?text=I'm checking out TeeZilla!&amp;count=none&amp;via=TeeZilla&amp;related=rusicHQ" title="Share this page on Twitter" class="lnkShareTwitter twitter_grey">Share on Twitter</a>
       </div>
 
@@ -312,7 +342,7 @@
     })();
 
   </script>
-  
+
   <!-- Optimizely -->
   <script src="//cdn.optimizely.com/js/42790142.js"></script>
 

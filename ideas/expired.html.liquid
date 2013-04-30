@@ -1,56 +1,56 @@
 <div class="block_wrapper idea-expired">
-	
-	<h1 class="box_title"><span>{{idea.title | truncate: 45}}</span></h1>
 
-		<div id="details_wrap">
-			<div id="large_tee_col">
-				<span class="vote_status_wrapper" title="Number of votes">{{ idea.likes }}</span>
-				
-				<div class="expired-overlay"><span class="middle">voting for this tee has ended!</span></div>
-				<img src="{{idea.images.first.medium_large}}" alt="{{idea.title}}" />
-			
-			</div><!-- end #large_tee_col -->
-			
-			<div id="main_details_col">
-			
-    		{% if idea.custom3 == '1' %}
+  <h1 class="box_title"><span>{{idea.title | truncate: 45}}</span></h1>
+
+    <div id="details_wrap">
+      <div id="large_tee_col">
+        <span class="vote_status_wrapper" title="Number of votes">{{ idea.likes }}</span>
+
+        <div class="expired-overlay"><span class="middle">voting for this tee has ended!</span></div>
+        <img src="{{idea.images.first.medium_large}}" alt="{{idea.title}}" />
+
+      </div><!-- end #large_tee_col -->
+
+      <div id="main_details_col">
+
+        {% if idea.custom3 == '1' %}
               <span class="charity-tag">Temwa charity entry</span>
             {% endif %}
-            
+
             {% if idea.custom3 == '2' %}
               <span class="charity-tag">WhizzKidz charity entry</span>
             {% endif %}
-				
-			<div id="details_share_icons_wrap">
-			  <p style="margin-bottom: 4px;">Share on:</p>
-			  <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]={{idea.title}}&amp;p[summary]={{idea.content}}&amp;p[url]={{idea.permalink}}&amp;&amp;p[images][0]={{idea.images.first.medium_large}}','sharer','toolbar=0,status=0,width=650,height=325');" href="javascript: void(0)" class="facebook_grey">Facebook</a>
-			  <a href="http://twitter.com/share?text=Vote for {{idea.title}} on TeeZilla!&amp;count=none&amp;via=TeeZilla&amp;related=rusicHQ" title="Share this tee on Twitter" class="lnkShareTwitter twitter_grey">Twitter</a>
-			</div>
-					
-				<p>
-					<span class="designer_name_title">Designer:</span>
-					<a href="{{ idea.user.profile_url }}" title="link to {{ idea.user.nickname }}'s profile on {{ idea.user.provider }}"><img src="{{idea.user.image_url}}" alt="{{ idea.user.nickname }}'s avatar" /></a>
-					<span class="designer_name"><a href="{{ idea.user.profile_url }}" title="link to {{ idea.user.nickname }}'s profile on {{ idea.user.provider }}">{{idea.user.nickname}}</a></span>
-				</p>
-				
-			</div><!-- end #main_details_col -->
-			
-			<div id="title_and_description">
-				<p>
-					<span class="tee_title_title">Tee Title:</span>
-					<span class="tee_title">{{idea.title}}</span>
-				</p>
-			
-				<p>
-					<span class="description_title">Description:</span>
-					<span class="description">{{idea.content}}</span>
-				</p>	
-				
-			</div><!-- end #title_description -->
-			
-		</div><!-- end #details_wrap -->
-	
-	<br class="clrb" />
+
+      <div id="details_share_icons_wrap">
+        <p style="margin-bottom: 4px;">Share on:</p>
+        <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]={{idea.title}}&amp;p[summary]={{idea.content}}&amp;p[url]={{idea.permalink}}&amp;&amp;p[images][0]={{idea.images.first.medium_large}}','sharer','toolbar=0,status=0,width=650,height=325');" href="javascript: void(0)" class="facebook_grey">Facebook</a>
+        <a href="http://twitter.com/share?text=Vote for {{idea.title}} on TeeZilla!&amp;count=none&amp;via=TeeZilla&amp;related=rusicHQ" title="Share this tee on Twitter" class="lnkShareTwitter twitter_grey">Twitter</a>
+      </div>
+
+        <p>
+          <span class="designer_name_title">Designer:</span>
+          <a href="{{ idea.user.profile_url }}" title="link to {{ idea.user.nickname }}'s profile on {{ idea.user.provider }}"><img src="{{idea.user.image_url}}" alt="{{ idea.user.nickname }}'s avatar" /></a>
+          <span class="designer_name"><a href="{{ idea.user.profile_url }}" title="link to {{ idea.user.nickname }}'s profile on {{ idea.user.provider }}">{{idea.user.nickname}}</a></span>
+        </p>
+
+      </div><!-- end #main_details_col -->
+
+      <div id="title_and_description">
+        <p>
+          <span class="tee_title_title">Tee Title:</span>
+          <span class="tee_title">{{idea.title}}</span>
+        </p>
+
+        <p>
+          <span class="description_title">Description:</span>
+          <span class="description">{{idea.content}}</span>
+        </p>
+
+      </div><!-- end #title_description -->
+
+    </div><!-- end #details_wrap -->
+
+  <br class="clrb" />
 
 
 </div><!-- end .block_wrapper -->
@@ -67,8 +67,8 @@
 
 {% if current_user %}
 <div class="block_wrapper">
-	
-	<h2 class="box_title"><span>Post your comment</span></h2>
+
+  <h2 class="box_title"><span>Post your comment</span></h2>
   <form action="{{idea.permalink}}/comments" id="comments" method="post" class="clearfix">
     <div class="input clearfix">
       <label for="comment_body">Comment</label>
@@ -79,43 +79,43 @@
     </div>
     <div class="input social-post clearfix">
       <label class="checkbox" for="comment_should_post_to_social">Share this comment on {{current_user.provider}}?</label>
-      <input class="checkbox" type="checkbox" id="comment_should_post_to_social" name="comment[should_post_to_social]" value="1" checked="checked" /> 
+      <input class="checkbox" type="checkbox" id="comment_should_post_to_social" name="comment[should_post_to_social]" value="1" checked="checked" />
     </div>
   </form>
 </div>
 {% endif %}
 
 <div class="block_wrapper">
-	
-	<h2 class="box_title"><span>Comments</span></h2>
-	{% unless current_user %}
-	  <div id="comments_facebook_login_wrap">
-  		<p>
-  			<a href="#login_form" class="twitter_blue simple_login no-text"><span class="text-hidden">Comment with Twitter Login</span></a>
-  			<a href="#login_form" class="facebook_blue simple_login no-text"><span class="text-hidden">Comment with Facebook Login</span></a>
-  			Login to Facebook or Twitter to leave a comment
-  		</p>
-  	</div><!-- end #comments_facebook_login_wrap -->
-	{% endunless %}
-	
-	{% if idea.comments != empty %}
-	  <ul id="comments_list" class="clearfix">
-  	  {% for comment in idea.comments %}
-  	    <li>
-    			<a href="{{ comment.user.profile_url }}" title="link to {{ comment.user.nickname }}'s profile on {{ comment.user.provider }}"><img src="{{comment.user.image_url}}" alt="{{comment.user.nickname}}" /></a>
-    			<p>
-    				<span class="comment_date">{{comment.created_at | date: '%b %d, %Y at %H:%I'}}</span>
-    				 <span class="comment_author"><a href="{{ comment.user.profile_url }}" title="link to {{ comment.user.nickname }}'s profile on {{ comment.user.provider }}">{{comment.user.nickname}}</a> wrote...</span>
+
+  <h2 class="box_title"><span>Comments</span></h2>
+  {% unless current_user %}
+    <div id="comments_facebook_login_wrap">
+      <p>
+        <a href="#login_form" class="twitter_blue simple_login no-text"><span class="text-hidden">Comment with Twitter Login</span></a>
+        <a href="#login_form" class="facebook_blue simple_login no-text"><span class="text-hidden">Comment with Facebook Login</span></a>
+        Login to Facebook or Twitter to leave a comment
+      </p>
+    </div><!-- end #comments_facebook_login_wrap -->
+  {% endunless %}
+
+  {% if idea.comments != empty %}
+    <ul id="comments_list" class="clearfix">
+      {% for comment in idea.comments %}
+        <li>
+          <a href="{{ comment.user.profile_url }}" title="link to {{ comment.user.nickname }}'s profile on {{ comment.user.provider }}"><img src="{{comment.user.image_url}}" alt="{{comment.user.nickname}}" /></a>
+          <p>
+            <span class="comment_date">{{comment.created_at | date: '%b %d, %Y at %H:%I'}}</span>
+             <span class="comment_author"><a href="{{ comment.user.profile_url }}" title="link to {{ comment.user.nickname }}'s profile on {{ comment.user.provider }}">{{comment.user.nickname}}</a> wrote...</span>
             {{comment.body | markdown}}
-    			</p>
-    		</li>
-  	  {% endfor %}
-  	</ul><!-- end .comment_wrap -->
-	{% else %}
-	  <p style="margin: 40px 0 10px 10px">
+          </p>
+        </li>
+      {% endfor %}
+    </ul><!-- end .comment_wrap -->
+  {% else %}
+    <p style="margin: 40px 0 10px 10px">
       No comments have been posted yet.
-	  </p>
-	{% endif %}
+    </p>
+  {% endif %}
 
 
 </div><!-- end .block_wrapper -->
